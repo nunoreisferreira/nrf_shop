@@ -1,84 +1,30 @@
-/* Background for the main content area */
 .flex-container {
     display: flex;
-    justify-content: space-between; /* Space evenly between blocks */
-    align-items: stretch; /* Stretch items to the same height */
-    gap: 20px; /* Add space between the blocks */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     padding: 40px;
-    background-color: #ffffff; /* Set a subtle light gray background */
-    border-radius: 10px; /* Round the corners of the background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a slight shadow for depth */
 }
 
 .flex-container div {
-    flex: 1 1 30%; /* Ensure equal width for all containers */
-    display: flex;
-    flex-direction: column; /* Align content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    flex: 1 1 200px;
     padding: 20px;
-    border: 1px solid #ffffff;
+    text-align: center;
+    border: 1px solid #ddd;
     border-radius: 10px;
     background-color: #fff;
 }
 
-.video-container video
-{
-    width: 100%; /* Fill the container width */
-    height: 100%; /* Fill the container height */
+.flex-container .video-container video {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    object-fit: cover; /* Ensure content fits within the container */
 }
 
-.map-container iframe {
-    width: 100%; /* Ensure the iframe fills its container width */
-    height: 100%; /* Ensure the iframe fills its container height */
-    border: none; /* Remove any border around the iframe */
-    border-radius: 10px; /* Add rounded corners to match other containers */
-}
-
-.map-container {
-    overflow: hidden; /* Prevent content overflow for rounded corners */
-    border-radius: 10px; /* Ensure container has rounded corners matching the iframe */
-}
-
-.form-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.flex-container .map-container iframe {
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.form-container form label {
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.form-container form input,
-.form-container form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.form-container form .form-button {
-    width: auto; /* Set the button width to fit its content */
-    padding: 15px 30px; /* Adjust padding for a larger button */
-    background-color: #000;
-    color: #fff;
-    font-size: 1rem; /* Increase font size */
-    font-weight: bold;
+    height: 200px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: center; /* Center the button in the form */
-}
-
-.form-container form .form-button:hover {
-    background-color: #444;
+    border-radius: 10px;
 }
