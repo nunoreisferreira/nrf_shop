@@ -28,7 +28,7 @@
     display: flex;
     flex-wrap: nowrap; /* Keep products in a single row */
     justify-content: center; /* Center products in the row */
-    align-items: center; /* Align products vertically */
+    align-items: stretch; /* Make all items equal height */
     gap: 20px; /* Spacing between products */
     padding: 20px;
 }
@@ -36,9 +36,9 @@
 /* General Product Styling */
 .product {
     flex: 1 1 300px;
-    max-width: 300px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
     align-items: center;
     padding: 15px;
     border: 1px solid #ddd;
