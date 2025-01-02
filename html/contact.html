@@ -16,7 +16,7 @@
     <!-- Header Section -->
     <header>
       <div class="logo-container">
-        <img src="../home_img/POR 64.png" alt="NRF Logo" />
+        <img src="/home_img/POR 64.png" alt="NRF Logo" />
         <h1>NRF SHOP</h1>
         <p id="clock">00:00:00</p>
       </div>
@@ -25,14 +25,14 @@
           <li><a href="/html/index.html">Home</a></li>
           <li><a href="/html/about.html">About</a></li>
           <li><a href="/html/products.html">Products</a></li>
-          <li><a href="/html/contact.html">Contact</a></li> <!-- Fixed link -->
+          <li><a href="/html/contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <!-- Main Content Section -->
     <main class="flex-container">
-      <div class="video-container">
+      <div class="video-container" style="order: 1">
         <video
           src="/home_img/video_frame_1.mp4"
           controls
@@ -41,7 +41,7 @@
           loop
         ></video>
       </div>
-      <div class="form-container">
+      <div class="form-container" style="order: 2">
         <h2>Contact Us</h2>
         <form onsubmit="return validateForm()">
           <label for="name">Name:</label>
@@ -51,14 +51,16 @@
           <input type="email" id="email" name="email" required />
 
           <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="3" required></textarea>
+          <textarea id="message" name="message" rows="4" required></textarea>
 
           <button class="form-button" type="submit">Send</button>
         </form>
       </div>
-      <div class="map-container">
+      <div class="map-container" style="order: 3">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.7920832090776!2d-9.16259138858168!3d38.768472554183354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1932edd62bb521%3A0x1ee0de4e32108704!2sISTEC%20-%20Instituto%20Superior%20de%20Tecnologias%20Avan%C3%A7adas!5e0!3m2!1spt-PT!2spt!4v1734116336688!5m2!1spt-PT!2spt"
+          width="500"
+          height="400"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
