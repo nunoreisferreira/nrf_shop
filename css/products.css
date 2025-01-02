@@ -31,3 +31,55 @@
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
+
+.title-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.title-section h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.title-section p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Highlight for the Special Product */
+.special-product {
+    border: 3px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.05);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.special-product:hover {
+    background-color: rgb(170, 2, 2);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Button Styling for the Special Product */
+.special-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.special-button:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-style: oblique;
+}
+
