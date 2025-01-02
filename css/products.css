@@ -1,0 +1,40 @@
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Ensure even spacing */
+    align-items: center; /* Vertically align content */
+    gap: 20px; /* Add space between categories */
+    padding: 40px;
+}
+
+.flex-container .product-category {
+    flex: 1 1 30%; /* Equal width for all categories */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #000; /* Black border */
+    border-radius: 10px;
+    background-color: #fff; /* White background */
+    gap: 15px;
+}
+
+.flex-container .product-category h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.flex-container .product-category p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.flex-container .product-category img {
+    width: 100%; /* Fit the container width */
+    max-height: 200px; /* Set a max height for consistency */
+    object-fit: cover; /* Ensure the image fills the space */
+    border-radius: 10px; /* Add rounded corners */
+}
