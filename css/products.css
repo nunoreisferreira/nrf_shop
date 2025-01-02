@@ -62,20 +62,65 @@
 /* Product-Specific Styles */
 .product-1 {
     order: 1;
-    border: 3px solid #f00;
-    background-color: #ffe5e5;
+    border: 3px solid rgb(0, 0, 0);
+    background-color: #ffffff;
 }
 
 .product-2 {
     order: 2;
-    border: 3px solid #f00;
-    background-color: #ffe5e5;
+    border: 3px solid rgb(0, 0, 0);
+    background-color: #ffffff;
 }
 
 .product-3 {
     order: 3;
-    border: 3px solid #f00;
-    background-color: #ffe5e5;
+    border: 3px solid rgb(0, 0, 0);
+    background-color: #ffffff;
+}
+
+
+/* Button for Product Sections */
+.section-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #f00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.section-button:hover {
+    background-color: rgb(170, 2, 2);
+}
+
+/* Product Sections */
+.product-section {
+    flex: 1 1 300px;
+    max-width: 300px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Images for Product Sections */
+.product-section img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Button for Product Actions */
@@ -92,5 +137,5 @@
 }
 
 .product-button:hover {
-    background-color: #d10000;
+    background-color: rgb(170, 2, 2);
 }

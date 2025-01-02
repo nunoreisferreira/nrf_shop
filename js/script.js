@@ -36,3 +36,49 @@ function validateForm()
     }
     return true;
 }
+
+
+/*Products Page*/
+document.addEventListener("DOMContentLoaded", () => {
+    // Buttons for navigation
+    const buttons = document.querySelectorAll(".section-button");
+
+    // Add event listeners to buttons
+    buttons.forEach(button => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            const href = button.getAttribute("href");
+            if (href) {
+                window.location.href = href; // Redirect to the specified href
+            }
+        });
+    });
+
+    // Display clock dynamically
+    const clockElement = document.getElementById("clock");
+    setInterval(() => {
+        const now = new Date();
+        clockElement.textContent = now.toLocaleTimeString();
+    }, 1000);
+});
+
+/* Cart Functions*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Handle "Add to Cart" buttons
+    const addToCartButtons = document.querySelectorAll(".section-button");
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            alert("Product added to cart!");
+            // Add cart logic here, e.g., updating localStorage or a backend API
+        });
+    });
+
+    // Display clock dynamically
+    const clockElement = document.getElementById("clock");
+    setInterval(() => {
+        const now = new Date();
+        clockElement.textContent = now.toLocaleTimeString();
+    }, 1000);
+});
