@@ -1,44 +1,48 @@
-/* Centralize Title and Products */
-.products-container {
+/* Main Section (Products Page) */
+main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 40px;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    flex: 1; /* Allow main to expand and fill the remaining space */
+    padding: 20px;
     text-align: center;
 }
 
+/* Title Section Styling */
 .title-section {
-    max-width: 800px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
-.title-section h2 {
-    font-size: 2rem;
+.title-section h1 {
+    font-size: 3rem; /* Larger title */
+    font-weight: bold;
     color: #333;
+    margin-bottom: 10px;
 }
 
 .title-section p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #555;
 }
 
-/* Flexbox Grid for Products */
+/* Products Grid Layout */
 .products-grid {
     display: flex;
-    flex-wrap: nowrap; /* Keep products in a single row */
-    justify-content: center; /* Center products in the row */
-    align-items: stretch; /* Make all items equal height */
-    gap: 20px; /* Spacing between products */
-    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the grid items */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Add spacing between products */
+    max-width: 1200px; /* Optional: Restrict the width of the grid */
+    width: 100%; /* Ensure the grid takes full width */
 }
 
-/* General Product Styling */
-.product {
+/* Product Item Styling */
+.product-item {
     flex: 1 1 300px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute content evenly */
     align-items: center;
     padding: 15px;
     border: 1px solid #ddd;
@@ -48,38 +52,29 @@
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.product img {
+.product-item img {
     width: 100%;
     max-width: 250px;
     border-radius: 5px;
 }
 
-.product:hover {
+.product-item h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+}
+
+.product-item:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Product-Specific Styles */
-.product-1 {
-    order: 1;
-    border: 3px solid rgb(0, 0, 0);
-    background-color: #ffffff;
-}
-
-.product-2 {
-    order: 2;
-    border: 3px solid rgb(0, 0, 0);
-    background-color: #ffffff;
-}
-
-.product-3 {
-    order: 3;
-    border: 3px solid rgb(0, 0, 0);
-    background-color: #ffffff;
-}
-
-
-/* Button for Product Sections */
+/* Section Button Styling */
 .section-button {
     margin-top: 10px;
     padding: 10px 20px;
@@ -89,53 +84,10 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .section-button:hover {
     background-color: rgb(170, 2, 2);
-}
-
-/* Product Sections */
-.product-section {
-    flex: 1 1 300px;
-    max-width: 300px;
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Images for Product Sections */
-.product-section img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.product-section:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Button for Product Actions */
-.product-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #f00;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.product-button:hover {
-    background-color: rgb(170, 2, 2);
 }

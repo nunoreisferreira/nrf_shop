@@ -1,0 +1,70 @@
+/* Main Section (About Us Page) */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Title Section Styling */
+.title-section {
+    margin-bottom: 40px;
+}
+
+.title-section h1 {
+    font-size: 3rem; /* Larger title */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.title-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* About Grid Layout */
+.about-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center the grid items */
+    gap: 20px; /* Add spacing between sections */
+    max-width: 1200px; /* Restrict the width of the grid */
+    width: 100%; /* Ensure the grid takes full width */
+}
+
+/* About Item Styling */
+.about-item {
+    flex: 1 1 300px; /* Flexible sizing with a base width of 300px */
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-item h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.about-item p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+}
+
+/* Hover Effects */
+.about-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}

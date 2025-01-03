@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/index.css" />
     <link
       rel="website icon"
       type="png"
-      href="home_img/transparent_website icon.png"
+      href="/home_img/transparent_website icon.png"
     />
-    <title>NRF SHOP</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>NRF SHOP - Home</title>
   </head>
   <body>
     <!-- Header Section -->
@@ -25,14 +30,15 @@
           <li><a href="/html/about.html">About</a></li>
           <li><a href="/html/products.html">Products</a></li>
           <li><a href="/html/contact.html">Contact</a></li>
+          <li><a href="/html/products_cart.html"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
       </nav>
     </header>
 
     <!-- Main Content Section -->
-    <main class="main-container">
+    <main class="flex-container">
       <!-- Left Video -->
-      <div class="left">
+      <div class="video-container" style="order: 1;">
         <video
           src="../home_img/video_frame_1.mp4"
           controls
@@ -43,15 +49,15 @@
       </div>
 
       <!-- Center Content -->
-      <div class="center">
-        <h2>Play Chess <br />with different styles!</h2>
+      <div class="center-container" style="order: 2;">
+        <h2>Play Chess <br />with Different Styles!</h2>
         <button class="modal-button" onclick="openModal('modal1')">
           Chess
         </button>
       </div>
 
       <!-- Right Video -->
-      <div class="right">
+      <div class="video-container" style="order: 3;">
         <video
           src="../home_img/video_frame_1.mp4"
           controls
@@ -60,32 +66,37 @@
           loop
         ></video>
       </div>
-
-      <!-- Modal Section -->
-      <div
-        class="modal-overlay"
-        id="modal1Overlay"
-        onclick="closeModal('modal1')"
-      ></div>
-      <div class="modal" id="modal1">
-        <p>Chess is a strategic board game played between two players.</p>
-        <p>
-          The main objective of the game is to checkmate the opponent's king,
-          meaning placing it under attack in such a way that it cannot make a
-          legal move to escape.
-        </p>
-        <p>
-          Chess is considered a combination of art, science, and sport, widely
-          recognized for its tactical and strategic complexity.
-        </p>
-        <p>
-          Besides being a leisure activity, chess is also an educational tool,
-          promoting the development of skills such as logical thinking,
-          concentration, and problem-solving.
-        </p>
-        <button onclick="closeModal('modal1')">Close</button>
-      </div>
     </main>
+
+    <!-- Modal Section -->
+    <div
+      class="modal-overlay"
+      id="modal1Overlay"
+      onclick="closeModal('modal1')"
+    ></div>
+    <div class="modal" id="modal1">
+      <p>Chess is a strategic board game played between two players.</p>
+      <p>
+        The main objective of the game is to checkmate the opponent's king,
+        meaning placing it under attack in such a way that it cannot make a
+        legal move to escape.
+      </p>
+      <p>
+        Chess is considered a combination of art, science, and sport, widely
+        recognized for its tactical and strategic complexity.
+      </p>
+      <p>
+        Besides being a leisure activity, chess is also an educational tool,
+        promoting the development of skills such as logical thinking,
+        concentration, and problem-solving.
+      </p>
+      <button onclick="closeModal('modal1')">Close</button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
+    </footer>
 
     <!-- Script Section -->
     <script src="/js/script.js"></script>

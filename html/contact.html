@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link
       rel="website icon"
       type="image/png"
@@ -26,45 +30,64 @@
           <li><a href="/html/about.html">About</a></li>
           <li><a href="/html/products.html">Products</a></li>
           <li><a href="/html/contact.html">Contact</a></li>
+          <li><a href="/html/products_cart.html"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
       </nav>
     </header>
 
     <!-- Main Content Section -->
-    <main class="flex-container">
-      <div class="video-container" style="order: 1">
-        <video
-          src="/video/home/video_frame_1.mp4"
-          controls
-          autoplay
-          muted
-          loop
-        ></video>
+    <main>
+      <!-- Title Section -->
+      <div class="title-section">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you! Reach out via email or the form below.</p>
       </div>
-      <div class="form-container" style="order: 2">
-        <h2>Contact Us</h2>
-        <form onsubmit="return validateForm()">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
 
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" required />
+      <div class="flex-container">
+        <!-- Video Section -->
+        <div class="video-container">
+          <video
+            src="/video/home/video_frame_1.mp4"
+            controls
+            autoplay
+            muted
+            loop
+          ></video>
+        </div>
 
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+        <!-- Contact Form Section -->
+        <div class="form-container">
+          <form onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
 
-          <button class="form-button" type="submit">Send</button>
-        </form>
-      </div>
-      <div class="map-container" style="order: 3">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.7920832090776!2d-9.16259138858168!3d38.768472554183354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1932edd62bb521%3A0x1ee0de4e32108704!2sISTEC%20-%20Instituto%20Superior%20de%20Tecnologias%20Avan%C3%A7adas!5e0!3m2!1spt-PT!2spt!4v1734116336688!5m2!1spt-PT!2spt"
-          width="500"
-          height="400"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Your Message"
+              required
+            ></textarea>
+
+            <button class="form-button" type="submit">Send</button>
+          </form>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.7920832090776!2d-9.16259138858168!3d38.768472554183354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1932edd62bb521%3A0x1ee0de4e32108704!2sISTEC%20-%20Instituto%20Superior%20de%20Tecnologias%20Avan%C3%A7adas!5e0!3m2!1spt-PT!2spt!4v1734116336688!5m2!1spt-PT!2spt"
+            width="100%"
+            height="400"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </main>
 
@@ -73,6 +96,7 @@
       <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
     </footer>
 
+    <!-- Script Section -->
     <script src="/js/script.js"></script>
   </body>
 </html>

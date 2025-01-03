@@ -3,70 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/products.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <title>NRF SHOP - Products</title>
   </head>
   <body>
-      <!-- Header Section -->
-      <header>
-        <div class="logo-container">
-          <img src="/img/home/POR 64.png" alt="NRF Logo" />
-          <h1>NRF SHOP</h1>
-          <p id="clock">00:00:00</p>
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container">
+        <img src="/img/home/POR 64.png" alt="NRF Logo" />
+        <h1>NRF SHOP</h1>
+        <p id="clock">00:00:00</p>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="/html/index.html">Home</a></li>
+          <li><a href="/html/about.html">About</a></li>
+          <li><a href="/html/products.html">Products</a></li>
+          <li><a href="/html/contact.html">Contact</a></li>
+          <li><a href="/html/products_cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Products Section -->
+    <main>
+      <div class="title-section">
+        <h1>Products</h1>
+        <p>Explore our wide range of innovative and high-quality chess products!</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-item">
+          <img src="/img/products/chess_set.jpg" alt="Chess Sets" />
+          <h3>Chess Sets</h3>
+          <p>Find premium chess sets made for all styles and skill levels.</p>
+          <a href="/html/chess_sets.html" class="section-button">View Chess Sets</a>
         </div>
-        <nav class="navbar">
-          <ul>
-            <li><a href="/html/index.html">Home</a></li>
-            <li><a href="/html/about.html">About</a></li>
-            <li><a href="/html/products.html">Products</a></li>
-            <li><a href="/html/contact.html">Contact</a></li>
-            <li class="cart-item"><a href="/html/products_cart.html">Cart</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <!-- Main Content Section -->
-      <section class="products-container">
-        <!-- Title Section -->
-        <div class="title-section">
-          <h2>Products</h2>
-          <p>Explore our wide range of innovative and high-quality chess products!</p>
+        <div class="product-item">
+          <img src="/img/products/chess_clock.jpg" alt="Chess Clocks" />
+          <h3>Chess Clocks</h3>
+          <p>Explore high-quality clocks designed for speed and precision.</p>
+          <a href="/html/chess_clocks.html" class="section-button">View Chess Clocks</a>
         </div>
-
-        <!-- Product Sections -->
-        <div class="products-grid">
-          <!-- Chess Sets -->
-          <div class="product-section">
-            <img src="img/chess_sets.jpg" alt="Chess Sets" />
-            <h3>Chess Sets</h3>
-            <p>Find premium chess sets made for all styles and skill levels.</p>
-            <a href="/html/products_chess_sets.html" class="section-button">View Chess Sets</a>
-          </div>
-
-          <!-- Chess Clocks -->
-          <div class="product-section">
-            <img src="img/chess_clocks.jpg" alt="Chess Clocks" />
-            <h3>Chess Clocks</h3>
-            <p>Explore high-quality clocks designed for speed and precision.</p>
-            <a href="/html/products_chess_clocks.html" class="section-button">View Chess Clocks</a>
-          </div>
-
-          <!-- Chess Books -->
-          <div class="product-section">
-            <img src="img/chess_books.jpg" alt="Chess Books" />
-            <h3>Chess Books</h3>
-            <p>Learn from the best with our collection of chess strategy books.</p>
-            <a href="/html/products_chess_books.html" class="section-button">View Chess Books</a>
-          </div>
+        <div class="product-item">
+          <img src="/img/products/chess_books.jpg" alt="Chess Books" />
+          <h3>Chess Books</h3>
+          <p>Learn from the best with our collection of strategy books.</p>
+          <a href="/html/chess_books.html" class="section-button">View Chess Books</a>
         </div>
-      </section>
+      </div>
+    </main>
 
-      <!-- Footer Section -->
-      <footer class="footer">
-        <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
-      </footer>
-
-      <script src="/js/script.js"></script>
+    <!-- Footer Section -->
+    <footer class="footer">
+      <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
+    </footer>
   </body>
 </html>
