@@ -6,11 +6,6 @@
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/index.css" />
     <link
-      rel="website icon"
-      type="png"
-      href="/home_img/transparent_website icon.png"
-    />
-    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
@@ -20,7 +15,7 @@
     <!-- Header Section -->
     <header>
       <div class="logo-container">
-        <img src="../home_img/POR 64.png" alt="NRF Logo" />
+        <img src="/img/home/POR 64.png" alt="NRF Logo" />
         <h1>NRF SHOP</h1>
         <p id="clock">00:00:00</p>
       </div>
@@ -35,63 +30,60 @@
       </nav>
     </header>
 
-    <!-- Main Content Section -->
-    <main class="flex-container">
-      <!-- Left Video -->
-      <div class="video-container" style="order: 1;">
-        <video
-          src="../home_img/video_frame_1.mp4"
-          controls
-          autoplay
-          muted
-          loop
-        ></video>
+    <!-- Main Home Section -->
+    <main>
+      <div class="home-title-section">
+        <h1>Welcome to NRF SHOP</h1>
+        <p>Explore our innovative and high-quality chess products!</p>
       </div>
-
-      <!-- Center Content -->
-      <div class="center-container" style="order: 2;">
-        <h2>Play Chess <br />with Different Styles!</h2>
-        <button class="modal-button" onclick="openModal('modal1')">
-          Chess
-        </button>
-      </div>
-
-      <!-- Right Video -->
-      <div class="video-container" style="order: 3;">
-        <video
-          src="../home_img/video_frame_1.mp4"
-          controls
-          autoplay
-          muted
-          loop
-        ></video>
+      <div class="home-grid">
+        <div class="home-item">
+          <video
+            id="video1"
+            src="/video/home/video_frame_1.mp4" 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            controls>
+          </video>
+          <h3>Shop Chess Sets</h3>
+          <p>
+            Premium chess sets made for all styles and skill levels.
+          </p>
+        </div>
+        <div class="home-item">
+          <video
+          id="video1"
+          src="/video/home/Chess Clock Stock Video.mp4" 
+          autoplay 
+          muted 
+          loop 
+          playsinline
+          controls>
+          </video>
+          <h3>Find Chess Clocks</h3>
+          <p>
+            High-quality clocks designed for speed and precision.
+          </p>
+        </div>
+        <div class="home-item">
+          <video
+          id="video1"
+          src="/video/home/book.mp4" 
+          autoplay 
+          muted 
+          loop 
+          playsinline
+          controls>
+          </video>
+          <h3>Learn with Chess Books</h3>
+          <p>
+            Enhance your skills with strategy and educational materials.
+          </p>
+        </div>
       </div>
     </main>
-
-    <!-- Modal Section -->
-    <div
-      class="modal-overlay"
-      id="modal1Overlay"
-      onclick="closeModal('modal1')"
-    ></div>
-    <div class="modal" id="modal1">
-      <p>Chess is a strategic board game played between two players.</p>
-      <p>
-        The main objective of the game is to checkmate the opponent's king,
-        meaning placing it under attack in such a way that it cannot make a
-        legal move to escape.
-      </p>
-      <p>
-        Chess is considered a combination of art, science, and sport, widely
-        recognized for its tactical and strategic complexity.
-      </p>
-      <p>
-        Besides being a leisure activity, chess is also an educational tool,
-        promoting the development of skills such as logical thinking,
-        concentration, and problem-solving.
-      </p>
-      <button onclick="closeModal('modal1')">Close</button>
-    </div>
 
     <!-- Footer Section -->
     <footer class="footer">

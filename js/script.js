@@ -82,3 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clockElement.textContent = now.toLocaleTimeString();
     }, 1000);
 });
+
+document.getElementById('video1').addEventListener('pause', function () {
+    this.play();
+});
