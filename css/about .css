@@ -1,9 +1,10 @@
-/* Main Section (About Us Page) */
+/* Main Section (Products Page) */
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    flex: 1; /* Allow main to expand and fill the remaining space */
     padding: 20px;
     text-align: center;
 }
@@ -25,19 +26,20 @@ main {
     color: #555;
 }
 
-/* About Grid Layout */
-.about-grid {
+/* Products Grid Layout */
+.products-grid {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    flex-wrap: wrap;
     justify-content: center; /* Center the grid items */
-    gap: 20px; /* Add spacing between sections */
-    max-width: 1200px; /* Restrict the width of the grid */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Add spacing between products */
+    max-width: 1200px; /* Optional: Restrict the width of the grid */
     width: 100%; /* Ensure the grid takes full width */
 }
 
-/* About Item Styling */
-.about-item {
-    flex: 1 1 300px; /* Flexible sizing with a base width of 300px */
+/* Product Item Styling */
+.product-item {
+    flex: 1 1 300px;
     max-width: 300px;
     display: flex;
     flex-direction: column;
@@ -50,21 +52,42 @@ main {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.about-item h3 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    font-weight: bold;
-    color: #333;
+.product-item img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 5px;
 }
 
-.about-item p {
+.product-item h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product-item p {
     font-size: 1rem;
     color: #555;
     text-align: center;
 }
 
-/* Hover Effects */
-.about-item:hover {
+.product-item:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Button Styling */
+.section-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #f00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.section-button:hover {
+    background-color: rgb(170, 2, 2);
+    transform: scale(1.05);
 }
