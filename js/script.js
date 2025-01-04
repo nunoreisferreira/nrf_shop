@@ -27,16 +27,47 @@ function showNotification() {
     setTimeout(() => notification.classList.add("hidden"), 2000);
 }
 
-function validateForm() 
-{
-    let message = document.getElementById("message").value;
-    if (message.length < 10) {
-        alert("The message must be at least 10 characters long.");
-        return false;
+/*Formulary*/
+function validateForm(event) {
+    event.preventDefault(); // Prevents the form from being submitted
+  
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+    const errors = [];
+  
+    // Validate Name
+    if (!name.value.trim()) {
+      errors.push("Name is required.");
     }
-    return true;
-}
-
+  
+    // Validate Email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+      errors.push("Invalid email format.");
+    }
+  
+    // Validate Message Length
+    if (message.value.trim().length < 10) {
+      errors.push("Message must be at least 10 characters long.");
+    }
+  
+    // Display Errors or Success Message
+    const errorContainer = document.getElementById("error-messages");
+    if (errors.length > 0) {
+      errorContainer.innerHTML = errors.map(error => `<p>${error}</p>`).join("");
+      errorContainer.style.display = "block";
+      return false;
+    } else {
+      errorContainer.style.display = "none";
+      alert("Form submitted successfully!");
+      return true; // Proceed with form submission if valid
+    }
+  }
+  
+  // Attach Event Listener to the Form
+  document.getElementById("contactForm").addEventListener("submit", validateForm);
+  
 
 /*Products Page*/
 document.addEventListener("DOMContentLoaded", () => {
