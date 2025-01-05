@@ -5,7 +5,7 @@ html, body {
     height: 100%; /* Ensures body height spans the entire viewport */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
-    overflow: hidden; /* Prevents scrolling */
+    overflow-y: auto; /* Enables global scrolling */
 }
 
 /* Universal Box Sizing */
@@ -20,7 +20,7 @@ body {
     min-height: 100vh; /* Full viewport height */
 }
 
-/* Main Content Filler to Avoid Scrolling */
+/* Main Content Filler to Avoid Scrolling Issues */
 main {
     flex: 1; /* Expands to fill available space */
     display: flex;
@@ -28,7 +28,7 @@ main {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    overflow: hidden; /* Prevents content from creating scrollbars */
+    overflow-y: auto; /* Allows content to scroll if it overflows */
 }
 
 /* ========== Header ========== */
@@ -40,6 +40,9 @@ header {
     background-color: #ffffff;
     border-bottom: 5px solid #000000;
     flex-shrink: 0; /* Prevents header from shrinking */
+    position: sticky; /* Keeps header at the top during scrolling */
+    top: 0;
+    z-index: 100; /* Ensures it stays above other elements */
 }
 
 .logo-container {
@@ -67,15 +70,18 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #fff; /* White background */
     padding: 10px 20px;
     flex-shrink: 0; /* Prevents navbar from shrinking */
+    position: sticky; /* Keeps navbar fixed at the top */
+    top: 0;
+    z-index: 100; /* Ensures navbar is always on top */
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 15px; /* Adds consistent spacing between items */
+    gap: 15px; /* Consistent spacing between navbar items */
     padding: 0;
     margin: 0;
 }
@@ -86,31 +92,36 @@ header {
 
 .navbar a {
     text-decoration: none;
-    color: #000;
+    color: #000; /* Black text */
     font-weight: bold;
     font-size: 1rem;
     padding: 8px 12px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: rgb(170, 2, 2);
-    font-style: oblique;
+    color: rgb(170, 2, 2); /* Subtle red highlight */
 }
 
 /* Shopping Cart Styling */
-.navbar li.cart-item a {
-    background-color: #f00;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.navbar li.cart-item {
+    position: relative;
+    display: flex;
+    align-items: center; /* Align with the navbar */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f00; /* Red for the product count */
 }
 
-.navbar li.cart-item a:hover {
-    background-color: rgb(170, 2, 2);
-    transform: scale(1.05); /* Slightly enlarges the button on hover */
+.cart-item-count {
+    margin-left: 5px; /* Add space between cart icon and count */
+    font-size: 1rem; /* Make the count consistent with navbar text */
+    color: #f00; /* Red color for the count */
+    font-weight: bold;
+    display: inline; /* Simplifies the style */
+    box-shadow: none; /* Remove box shadow */
+    background: none; /* No background */
+    border: none; /* No border */
 }
 
 /* ========== Footer Section ========== */
@@ -118,12 +129,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background-color: #ffffff;
     border-top: 5px solid #000000;
     text-align: center;
     flex-shrink: 0; /* Prevents footer from shrinking */
-    height: 50px; /* Fixed height for the footer */
+    height: auto; /* Allows the footer height to adapt to content */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
 .footer-text {
