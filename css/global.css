@@ -68,20 +68,18 @@ header {
 /* ========== Navbar Styling ========== */
 .navbar {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff; /* White background */
+    justify-content: flex-end; /* Align the navbar items to the right */
+    align-items: center; /* Center-align the navbar vertically */
+    gap: 15px; /* Add spacing between menu items */
+    margin-top: -20px; /* Adjust alignment with the top content */
     padding: 10px 20px;
-    flex-shrink: 0; /* Prevents navbar from shrinking */
-    position: sticky; /* Keeps navbar fixed at the top */
-    top: 0;
-    z-index: 100; /* Ensures navbar is always on top */
 }
 
+/* Navbar Links */
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 15px; /* Consistent spacing between navbar items */
+    gap: 20px; /* Add space between items */
     padding: 0;
     margin: 0;
 }
@@ -93,35 +91,37 @@ header {
 .navbar a {
     text-decoration: none;
     color: #000; /* Black text */
-    font-weight: bold;
-    font-size: 1rem;
-    padding: 8px 12px;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    font-weight: bold; /* Bold text */
+    padding: 8px 12px; /* Add padding */
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 .navbar a:hover {
-    color: rgb(170, 2, 2); /* Subtle red highlight */
+    color: rgb(170, 2, 2); /* Highlight red on hover */
 }
 
 /* Shopping Cart Styling */
-.navbar li.cart-item {
-    position: relative;
-    display: flex;
-    align-items: center; /* Align with the navbar */
-    font-size: 1rem;
+.cart-item a {
+    background-color: transparent; /* Transparent background */
+    color: #f00; /* Red text for the cart icon */
     font-weight: bold;
-    color: #f00; /* Red for the product count */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cart-item-count {
-    margin-left: 5px; /* Add space between cart icon and count */
-    font-size: 1rem; /* Make the count consistent with navbar text */
-    color: #f00; /* Red color for the count */
+    background-color: #f00; /* Red background */
+    color: #fff; /* White text */
     font-weight: bold;
-    display: inline; /* Simplifies the style */
-    box-shadow: none; /* Remove box shadow */
-    background: none; /* No background */
-    border: none; /* No border */
+    font-size: 0.8rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px; /* Add space between the cart icon and count */
 }
 
 /* ========== Footer Section ========== */
