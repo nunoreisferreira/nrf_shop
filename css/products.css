@@ -1,3 +1,26 @@
+/* Title Section Styling */
+.title-section {
+    text-align: center; /* Center the text */
+    margin-bottom: 40px;
+    padding: 0 20px; /* Optional: Add some padding for better alignment on small screens */
+}
+
+.title-section h1 {
+    font-size: 3rem; /* Larger title */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center; /* Ensure title text is centered */
+}
+
+.title-section p {
+    font-size: 1.2rem; /* Subtitle size */
+    color: #555;
+    margin: 0 auto; /* Center the paragraph */
+    max-width: 800px; /* Optional: Limit the width of the subtitle for readability */
+    text-align: center; /* Ensure subtitle text is centered */
+}
+
 /* Products Grid Specific to Chess Sets */
 .products-grid {
     display: flex;
