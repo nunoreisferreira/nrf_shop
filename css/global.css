@@ -65,63 +65,80 @@ header {
     font-style: oblique;
 }
 
-/* ========== Navbar Styling ========== */
 .navbar {
     display: flex;
-    justify-content: flex-end; /* Align the navbar items to the right */
-    align-items: center; /* Center-align the navbar vertically */
-    gap: 15px; /* Add spacing between menu items */
-    margin-top: -20px; /* Adjust alignment with the top content */
+    justify-content: space-between; /* Space between logo and nav items */
+    align-items: center; /* Vertically align items */
     padding: 10px 20px;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* Navbar Links */
 .navbar ul {
-    list-style: none;
     display: flex;
-    gap: 20px; /* Add space between items */
+    align-items: center; /* Vertically align navbar items */
+    list-style: none;
+    margin: 0;
     padding: 0;
-    margin: 0;
+    gap: 20px; /* Space between navbar items */
 }
 
-.navbar li {
-    margin: 0;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #000; /* Black text */
-    font-weight: bold; /* Bold text */
-    padding: 8px 12px; /* Add padding */
-    transition: color 0.3s ease; /* Smooth hover effect */
-}
-
-.navbar a:hover {
-    color: rgb(170, 2, 2); /* Highlight red on hover */
-}
-
-/* Shopping Cart Styling */
-.cart-item a {
-    background-color: transparent; /* Transparent background */
-    color: #f00; /* Red text for the cart icon */
+.navbar ul li {
+    font-size: 1rem;
     font-weight: bold;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(240, 240, 240, 0.8); /* Subtle hover effect */
+}
+
+/* Shopping Cart Specific Styling */
+.cart-item {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.cart-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f00;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.cart-item .fas {
+    font-size: 1.2rem;
+    margin-right: 5px;
 }
 
 .cart-item-count {
-    background-color: #f00; /* Red background */
-    color: #fff; /* White text */
+    background-color: #f00;
+    color: #fff;
     font-weight: bold;
     font-size: 0.8rem;
+    border-radius: 50%;
     width: 20px;
     height: 20px;
-    border-radius: 50%; /* Make it circular */
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: 5px; /* Add space between the cart icon and count */
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    right: -10px;
 }
 
 /* ========== Footer Section ========== */
