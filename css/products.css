@@ -1,72 +1,27 @@
-/* Main Section (Products Page) */
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    flex: 1; /* Allow main to expand and fill the remaining space */
-    padding: 20px;
-    text-align: center;
-}
-
-/* Title Section Styling */
-.title-section {
-    margin-bottom: 40px;
-}
-
-.title-section h1 {
-    font-size: 3rem; /* Larger title */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.title-section p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
-/* Products Grid Layout */
+/* Products Grid Specific to Chess Sets */
 .products-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the grid items */
-    align-items: center; /* Align items vertically */
-    gap: 20px; /* Add spacing between products */
-    max-width: 1200px; /* Optional: Restrict the width of the grid */
-    width: 100%; /* Ensure the grid takes full width */
+    justify-content: center; /* Center all product items */
+    gap: 20px; /* Space between items */
+    padding: 20px;
 }
 
-/* Product Item Styling */
+/* Uniform Product Item Styling */
 .product-item {
-    flex: 1 1 300px;
-    max-width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
+    width: 280px; /* Fixed width for uniformity */
+    height: 420px; /* Fixed height to ensure all boxes are the same size */
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-item img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 5px;
-}
-
-.product-item h3 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-.product-item p {
-    font-size: 1rem;
-    color: #555;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spread content evenly */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Align text to the center */
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-item:hover {
@@ -74,8 +29,38 @@ main {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Section Button Styling */
-.section-button {
+/* Image Styling */
+.product-item img {
+    width: auto;
+    max-width: 200px; /* Uniform max width for images */
+    max-height: 120px; /* Ensure images don't exceed box height */
+    object-fit: contain; /* Ensure images scale properly */
+    margin-bottom: 10px; /* Add spacing below the image */
+}
+
+/* Zoom-In Effect on Hover */
+.product-item img:hover {
+    transform: scale(1.5); /* Zoom in by 20% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for emphasis */
+}
+
+/* Title Styling */
+.product-item h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Price Styling */
+.product-item p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Button Styling */
+.product-item .section-button {
     margin-top: 10px;
     padding: 10px 20px;
     font-size: 1rem;
@@ -87,7 +72,7 @@ main {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.section-button:hover {
+.product-item .section-button:hover {
     background-color: rgb(170, 2, 2);
     transform: scale(1.05);
 }
