@@ -2,49 +2,53 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensures body height spans the entire viewport */
+    height: 100%; /* Ensure it spans the full height */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
-    overflow-y: auto; /* Enables global scrolling */
+    overflow-y: scroll; /* Forces the scrollbar to the right */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
+
 
 /* Universal Box Sizing */
 *, *::before, *::after {
     box-sizing: inherit;
 }
 
-/* ========== Flex Layout for Full-Page Content ========== */
+/* ========== Body Layout ========== */
 body {
     display: flex;
     flex-direction: column; /* Stacks header, main, and footer */
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh; /* Ensures content fills the full height of the viewport */
 }
 
-/* Main Content Filler to Avoid Scrolling Issues */
+/* Main Content Section */
 main {
-    flex: 1; /* Expands to fill available space */
+    flex: 1;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Align content to the top */
     align-items: center;
     padding: 20px;
-    overflow-y: auto; /* Allows content to scroll if it overflows */
+    overflow-y: auto; /* Enables vertical scrolling only in the main section */
 }
 
-/* ========== Header ========== */
+/* ========== Header Section ========== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%; /* Spans the full width of the viewport */
     padding: 20px;
     background-color: #ffffff;
     border-bottom: 5px solid #000000;
-    flex-shrink: 0; /* Prevents header from shrinking */
-    position: sticky; /* Keeps header at the top during scrolling */
+    position: sticky; /* Keeps the header fixed at the top */
     top: 0;
-    z-index: 100; /* Ensures it stays above other elements */
+    z-index: 100; /* Ensures header stays above other elements */
 }
 
+/* Logo Container */
 .logo-container {
     display: flex;
     align-items: center;
@@ -59,12 +63,19 @@ header {
     margin-left: 20px;
 }
 
-.logo-container h1:hover {
-    color: rgb(170, 2, 2);
+.logo-container h1 {
+    margin-left: 15px;
+    font-style: oblique; /* Oblique styling */
+    color: #333;
+    transition: color 0.3s;
     cursor: pointer;
-    font-style: oblique;
 }
 
+.logo-container h1:hover {
+    color: rgb(170, 2, 2); /* Subtle color change on hover */
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between; /* Space between logo and nav items */
@@ -158,6 +169,24 @@ header {
 .footer-text {
     font-size: 1em;
     color: #6c757d;
+}
+
+/* ========== Ensure Scrollbar Styling ========== */
+::-webkit-scrollbar {
+    width: 8px; /* Adjust scrollbar width */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded scrollbar edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e22323; /* Darker color on hover */
+}
+
+::-webkit-scrollbar-track {
+    background: #bd1515; /* Scrollbar track background */
 }
 
 /* ========== Responsive Design ========== */

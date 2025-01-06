@@ -24,7 +24,7 @@ function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartCountElement = document.querySelector(".cart-item-count");
     if (cartCountElement) {
-        cartCountElement.textContent = cart.length; // Update the cart count
+        cartCountElement.textContent = cart.length;
     }
 }
 
@@ -45,6 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("cart-items")) {
         renderCartItems();
     }
+
+    // Initialize "Back to Top" button functionality
+    topFunction();
 });
 
 // Render Cart Items on Cart Page
@@ -54,7 +57,7 @@ function renderCartItems() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     if (cartItemsContainer) {
-        cartItemsContainer.innerHTML = ""; // Clear existing content
+        cartItemsContainer.innerHTML = "";
 
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
@@ -77,7 +80,6 @@ function renderCartItems() {
             cartItemsContainer.appendChild(cartItem);
         });
 
-        // Update cart summary
         const totalItems = cart.length;
         const totalPrice = cart.reduce((total, item) => total + item.price, 0);
         if (cartSummary) {
@@ -86,7 +88,6 @@ function renderCartItems() {
             cartSummary.style.display = "block";
         }
 
-        // Attach event listeners to remove buttons
         document.querySelectorAll(".remove-item").forEach((button) => {
             button.addEventListener("click", () => {
                 const index = button.dataset.index;
@@ -99,7 +100,7 @@ function renderCartItems() {
 // Remove Item from Cart
 function removeFromCart(index) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1); // Remove the selected item
+    cart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCartItems();
     updateCartCount();
@@ -114,3 +115,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
