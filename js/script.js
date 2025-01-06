@@ -1,3 +1,64 @@
+// Form Validation Function
+function validateForm() {
+    // Get form elements
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+  
+    // Initialize validation flag
+    let isValid = true;
+  
+    // Clear previous error messages
+    clearErrorMessages();
+  
+    // Validate Name
+    if (name.value.trim() === '') {
+      showError(name, 'Name is required.');
+      isValid = false;
+    }
+  
+    // Validate Email
+    if (!validateEmail(email.value.trim())) {
+      showError(email, 'Please enter a valid email.');
+      isValid = false;
+    }
+  
+    // Validate Message
+    if (message.value.trim().length < 10) {
+      showError(message, 'Message must be at least 10 characters long.');
+      isValid = false;
+    }
+  
+    // Display success message if valid
+    if (isValid) {
+      alert('Form submitted successfully!');
+    }
+  
+    return isValid;
+  }
+  
+  // Utility Functions
+  function validateEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  }
+  
+  function showError(inputElement, message) {
+    const errorSpan = document.createElement('span');
+    errorSpan.classList.add('error-message');
+    errorSpan.textContent = message;
+    inputElement.parentNode.appendChild(errorSpan);
+    inputElement.classList.add('error-border');
+  }
+  
+  function clearErrorMessages() {
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach((msg) => msg.remove());
+  
+    const errorBorders = document.querySelectorAll('.error-border');
+    errorBorders.forEach((el) => el.classList.remove('error-border'));
+  }
+
 // Clock Update Function
 function updateClock() {
     const now = new Date();
