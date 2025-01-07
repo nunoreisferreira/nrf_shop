@@ -79,8 +79,7 @@ header {
 }
 
 .logo-container h1 {
-    margin-left: 15px; /* Add space to the left of the heading */
-    font-style: oblique; /* Use an oblique font style */
+    margin-left: -5px; /* Add space to the left of the heading */
     color: #333; /* Set text color to dark gray */
     transition: color 0.3s; /* Smooth color transition on hover */
     cursor: pointer; /* Change cursor to pointer on hover */
