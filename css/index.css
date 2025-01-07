@@ -1,97 +1,111 @@
-/* Main Section (Home Page) */
+/*
+============================================================
+INDEX.CSS - Styling for the Home Page
+------------------------------------------------------------
+Summary:
+- Main layout for the home page with a centered and responsive design.
+- Title section styling for a bold and visually appealing header.
+- Grid layout for home items, ensuring flexibility and responsiveness.
+- Home item styling with hover effects for interactivity.
+- Video and image-specific styles for consistency and aesthetics.
+- Responsive adjustments to maintain usability across devices.
+============================================================
+*/
+
+/* ========== Main Section (Home Page) ========== */
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  padding: 20px;
-  text-align: center;
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  flex: 1; /* Allow the main section to expand and fill available space */
+  padding: 20px; /* Add padding around the content */
+  text-align: center; /* Center-align text inside the main section */
 }
 
-/* Title Section Styling */
+/* ========== Title Section Styling ========== */
 .home-title-section {
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Add space below the title section */
 }
 
 .home-title-section h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 3rem; /* Set a large font size for the main title */
+  font-weight: bold; /* Make the title bold */
+  color: #333; /* Use a dark gray color for the title */
+  margin-bottom: 10px; /* Add spacing below the title */
 }
 
 .home-title-section p {
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 1.2rem; /* Slightly smaller font size for the subtitle */
+  color: #555; /* Use a medium gray color for the subtitle */
 }
 
-/* Home Grid Layout */
+/* ========== Home Grid Layout ========== */
 .home-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  max-width: 1200px;
-  width: 100%;
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow items to wrap onto the next row */
+  justify-content: center; /* Center the grid items horizontally */
+  align-items: center; /* Align items vertically */
+  gap: 20px; /* Add space between grid items */
+  max-width: 1200px; /* Limit the maximum width of the grid */
+  width: 100%; /* Ensure the grid spans the full width of its container */
 }
 
-/* Home Item Styling */
+/* ========== Home Item Styling ========== */
 .home-item {
-  flex: 1 1 300px;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1 1 300px; /* Flexible sizing with a base width of 300px */
+  max-width: 300px; /* Limit the maximum width of each item */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: center; /* Center-align content horizontally */
+  padding: 15px; /* Add padding inside the item */
+  border: 1px solid #ddd; /* Add a light gray border around the item */
+  border-radius: 10px; /* Round the corners of the item */
+  background-color: #fff; /* Set a white background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Add smooth hover transitions */
 }
 
 .home-item img {
-  width: 100%;
-  max-width: 250px; /* Same as video max-width */
-  border-radius: 10px; /* Match video border-radius */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Match video shadow */
-  object-fit: cover; /* Ensure it scales properly */
+  width: 100%; /* Ensure the image takes the full width of the item */
+  max-width: 250px; /* Limit the maximum width of the image */
+  border-radius: 10px; /* Match the border radius of the home item */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  object-fit: cover; /* Ensure the image scales proportionally */
 }
 
-/* Video Styling for Home Item */
+/* ========== Video Styling for Home Item ========== */
 .home-item video {
-  position: relative;
-  width: 100%;
-  max-width: 500px; /* Adjust as needed */
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
-  pointer-events: none; /* Disables clicking on the video */
+  position: relative; /* Position the video element */
+  width: 100%; /* Ensure the video takes the full width of the item */
+  max-width: 500px; /* Limit the maximum width of the video */
+  height: auto; /* Adjust height proportionally */
+  border-radius: 10px; /* Match the border radius of the home item */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  object-fit: cover; /* Ensure the video scales proportionally */
+  pointer-events: none; /* Disable interactions with the video */
 }
 
 .home-item video:hover {
-  transform: scale(1.05); /* Adds a slight zoom effect on hover */
+  transform: scale(1.05); /* Add a slight zoom effect on hover */
 }
 
-
+/* ========== Home Item Text Styling ========== */
 .home-item h3 {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  font-weight: bold;
-  color: #333;
+  font-size: 1.2rem; /* Set a medium font size for item titles */
+  margin: 10px 0; /* Add spacing around the title */
+  font-weight: bold; /* Make the title text bold */
+  color: #333; /* Use a dark gray color for the title text */
 }
 
 .home-item p {
-  font-size: 1rem;
-  color: #555;
-  text-align: center;
+  font-size: 1rem; /* Set the font size for item descriptions */
+  color: #555; /* Use a medium gray color for the description text */
+  text-align: center; /* Center-align the text inside the item */
 }
 
-/* Hover Effects */
+/* ========== Hover Effects ========== */
 .home-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Slightly enlarge the item on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Add a more prominent shadow */
 }

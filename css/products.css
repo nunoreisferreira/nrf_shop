@@ -1,101 +1,114 @@
-/* Title Section Styling */
+/*
+============================================================
+PRODUCTS.CSS - Styling for the Products Page
+------------------------------------------------------------
+Summary:
+- Title section with a bold header and subtitle, centered for readability.
+- Grid layout for displaying product items with flexible and responsive design.
+- Uniform styling for product items, including hover effects for interactivity.
+- Image-specific styling to ensure proper scaling and consistent presentation.
+- Styling for buttons and hover effects to enhance user experience.
+============================================================
+*/
+
+/* ========== Title Section Styling ========== */
 .title-section {
     text-align: center; /* Center the text */
-    margin-bottom: 40px;
-    padding: 0 20px; /* Optional: Add some padding for better alignment on small screens */
+    margin-bottom: 40px; /* Add spacing below the title section */
+    padding: 0 20px; /* Add padding for alignment on small screens */
 }
 
 .title-section h1 {
-    font-size: 3rem; /* Larger title */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 3rem; /* Set a large font size for the main title */
+    font-weight: bold; /* Make the title bold */
+    color: #333; /* Use dark gray for the title text */
+    margin-bottom: 10px; /* Add spacing below the title */
     text-align: center; /* Ensure title text is centered */
 }
 
 .title-section p {
-    font-size: 1.2rem; /* Subtitle size */
-    color: #555;
-    margin: 0 auto; /* Center the paragraph */
-    max-width: 800px; /* Optional: Limit the width of the subtitle for readability */
+    font-size: 1.2rem; /* Set a slightly smaller font size for the subtitle */
+    color: #555; /* Use medium gray for the subtitle text */
+    margin: 0 auto; /* Center the paragraph horizontally */
+    max-width: 800px; /* Limit the width for readability */
     text-align: center; /* Ensure subtitle text is centered */
 }
 
-/* Products Grid Specific to Chess Sets */
+/* ========== Products Grid Specific to Chess Sets ========== */
 .products-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow items to wrap onto the next row */
     justify-content: center; /* Center all product items */
-    gap: 20px; /* Space between items */
-    padding: 20px;
+    gap: 20px; /* Add space between items */
+    padding: 20px; /* Add padding around the grid */
 }
 
-/* Uniform Product Item Styling */
+/* ========== Uniform Product Item Styling ========== */
 .product-item {
-    width: 280px; /* Fixed width for uniformity */
-    height: 420px; /* Fixed height to ensure all boxes are the same size */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+    width: 280px; /* Set a fixed width for uniformity */
+    height: 420px; /* Set a fixed height to ensure consistent size */
+    background-color: #fff; /* Set a white background color */
+    border: 1px solid #ddd; /* Add a light gray border */
+    border-radius: 10px; /* Round the corners of the item */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack child elements vertically */
     justify-content: space-between; /* Spread content evenly */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Align text to the center */
-    padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center; /* Center-align content horizontally */
+    text-align: center; /* Center-align text inside the item */
+    padding: 15px; /* Add padding inside the item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth hover transitions */
 }
 
 .product-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly enlarge the item on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Add a more prominent shadow */
 }
 
-/* Image Styling */
+/* ========== Image Styling ========== */
 .product-item img {
-    width: auto;
-    max-width: 200px; /* Uniform max width for images */
-    max-height: 120px; /* Ensure images don't exceed box height */
-    object-fit: contain; /* Ensure images scale properly */
+    width: auto; /* Allow the width to adjust automatically */
+    max-width: 200px; /* Limit the maximum width of the image */
+    max-height: 120px; /* Limit the height to ensure consistent box size */
+    object-fit: contain; /* Scale the image proportionally */
     margin-bottom: 10px; /* Add spacing below the image */
 }
 
-/* Zoom-In Effect on Hover */
+/* ========== Zoom-In Effect on Hover ========== */
 .product-item img:hover {
-    transform: scale(1.5); /* Zoom in by 20% */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for emphasis */
+    transform: scale(1.5); /* Enlarge the image on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a more prominent shadow */
 }
 
-/* Title Styling */
+/* ========== Title Styling ========== */
 .product-item h3 {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #333;
-    margin: 10px 0;
+    font-size: 1.3rem; /* Set a medium font size for the title */
+    font-weight: bold; /* Make the title bold */
+    color: #333; /* Use dark gray for the title text */
+    margin: 10px 0; /* Add spacing above and below the title */
 }
 
-/* Price Styling */
+/* ========== Price Styling ========== */
 .product-item p {
-    font-size: 1.1rem;
-    color: #555;
-    margin: 5px 0;
+    font-size: 1.1rem; /* Set the font size for price text */
+    color: #555; /* Use medium gray for the text */
+    margin: 5px 0; /* Add spacing above and below the price text */
 }
 
-/* Button Styling */
+/* ========== Button Styling ========== */
 .product-item .section-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #f00;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px; /* Add spacing above the button */
+    padding: 10px 20px; /* Add padding inside the button */
+    font-size: 1rem; /* Set the font size for the button text */
+    color: #fff; /* Set the text color to white */
+    background-color: #f00; /* Set a red background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Round the corners of the button */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Add smooth hover transitions */
 }
 
 .product-item .section-button:hover {
-    background-color: rgb(170, 2, 2);
-    transform: scale(1.05);
+    background-color: rgb(170, 2, 2); /* Darken the red background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
 }

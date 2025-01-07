@@ -1,3 +1,17 @@
+/*
+============================================================
+CART.CSS - Styling for the Shopping Cart Page
+------------------------------------------------------------
+Summary:
+- General styling for the body and global elements.
+- Cart container with flexible layout and centralized alignment.
+- Title and cart items styling, including details, actions, and images.
+- Cart summary section with a clear layout for totals and checkout.
+- "Back to Top" button with smooth transitions and hover effects.
+- Responsive design to ensure a user-friendly interface on smaller screens.
+============================================================
+*/
+
 /* ========== General Styling ========== */
 body, html {
     overflow-y: scroll; /* Enable global vertical scrolling */
@@ -7,141 +21,139 @@ body, html {
 
 /* ========== Cart Container ========== */
 .cart-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px; /* Adjusted padding */
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+    display: flex; /* Use flexbox layout for the container */
+    flex-direction: column; /* Arrange content vertically */
+    align-items: center; /* Center-align all content */
+    padding: 20px; /* Add spacing inside the container */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Center-align text */
     overflow-y: visible; /* Allow content to overflow naturally */
-    height: auto; /* Ensure the container adjusts to its content */
-    box-sizing: border-box; /* Ensures padding and borders are included in width/height */
+    height: auto; /* Adjust height dynamically to fit content */
+    box-sizing: border-box; /* Include padding and borders in width/height */
 }
-
 
 /* Title Styling */
 .cart-container h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 2rem; /* Set a large font size for the title */
+    color: #333; /* Use dark gray for the text color */
+    margin-bottom: 20px; /* Add spacing below the title */
 }
 
 .cart-container p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 1rem; /* Set a default font size for paragraphs */
+    color: #555; /* Use medium gray for the text color */
 }
 
 /* ========== Cart Items ========== */
 .cart-items {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 800px;
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Add spacing between items */
+    width: 100%; /* Occupy full width of the parent container */
+    max-width: 800px; /* Limit the maximum width */
     overflow-y: visible; /* Prevent internal scrollbars */
 }
 
-
 .cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    gap: 20px;
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Spread items across the container */
+    padding: 15px; /* Add padding inside the item */
+    border: 1px solid #ddd; /* Add a light gray border */
+    border-radius: 10px; /* Round the corners */
+    background-color: #fff; /* Set a white background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    gap: 20px; /* Add spacing between child elements */
 }
 
 .cart-item img {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
+    width: 100px; /* Set a fixed width for the image */
+    height: 100px; /* Set a fixed height for the image */
+    border-radius: 5px; /* Round the corners of the image */
 }
 
 .cart-item-details {
-    flex: 1;
-    margin-left: 2px;
-    text-align: left;
+    flex: 1; /* Allow the details to take up available space */
+    margin-left: 2px; /* Add a small left margin */
+    text-align: left; /* Align text to the left */
 }
 
 .cart-item-details h3 {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 5px;
+    font-size: 1.2rem; /* Set a medium font size for titles */
+    color: #333; /* Use dark gray for the text color */
+    margin-bottom: 5px; /* Add spacing below the title */
 }
 
 .cart-item-details p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 1rem; /* Set the font size for descriptions */
+    color: #555; /* Use medium gray for the text color */
 }
 
 .cart-item-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack actions vertically */
+    align-items: center; /* Center-align actions */
+    gap: 10px; /* Add spacing between actions */
 }
 
 .cart-item-actions button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    color: #fff;
-    background-color: #f00;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px; /* Add padding inside the button */
+    font-size: 0.9rem; /* Set a smaller font size */
+    color: #fff; /* Use white text */
+    background-color: #f00; /* Set a red background */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; /* Change the cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Add smooth hover transitions */
 }
 
 .cart-item-actions button:hover {
-    background-color: rgb(170, 2, 2);
+    background-color: rgb(170, 2, 2); /* Use a darker red on hover */
 }
 
 /* ========== Cart Summary ========== */
 .cart-summary {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    padding: 15px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange content vertically */
+    align-items: center; /* Center-align all content */
+    width: 100%; /* Occupy full width of the parent container */
+    max-width: 800px; /* Limit the maximum width */
+    padding: 15px; /* Add spacing inside the summary */
+    margin-top: 20px; /* Add spacing above the summary */
+    border: 1px solid #ddd; /* Add a light gray border */
+    border-radius: 10px; /* Round the corners */
+    background-color: #fff; /* Set a white background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .cart-summary h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 15px;
+    font-size: 1.5rem; /* Set a larger font size for the summary title */
+    color: #333; /* Use dark gray for the text color */
+    margin-bottom: 15px; /* Add spacing below the title */
 }
 
 .cart-summary p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 10px;
+    font-size: 1rem; /* Set the font size for descriptions */
+    color: #555; /* Use medium gray for the text color */
+    margin-bottom: 10px; /* Add spacing below paragraphs */
 }
 
 .cart-summary button {
-    max-width: 400px;
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #f00;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    max-width: 400px; /* Limit the button width */
+    width: 100%; /* Ensure the button occupies full width */
+    padding: 15px; /* Add padding inside the button */
+    font-size: 1rem; /* Set the font size */
+    color: #fff; /* Use white text */
+    background-color: #f00; /* Set a red background */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; /* Change the cursor to pointer on hover */
+    transition: background-color 0.3s; /* Add smooth hover transitions */
 }
 
 .cart-summary button:hover {
-    background-color: rgb(170, 2, 2);
+    background-color: rgb(170, 2, 2); /* Use a darker red on hover */
 }
 
 /* ========== Return to Top Button ========== */
@@ -171,28 +183,28 @@ body, html {
 /* ========== Responsive Design ========== */
 @media (max-width: 768px) {
     .cart-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+        gap: 10px; /* Add spacing between elements */
     }
 
     .cart-item img {
-        width: 100%;
-        height: auto;
+        width: 100%; /* Adjust width for smaller screens */
+        height: auto; /* Maintain aspect ratio */
     }
 
     .cart-item-actions {
-        flex-direction: row;
-        gap: 15px;
+        flex-direction: row; /* Arrange actions in a row */
+        gap: 15px; /* Add spacing between actions */
     }
 
     .cart-summary {
-        width: 100%;
+        width: 100%; /* Ensure full width on smaller screens */
     }
 
     #backToTop {
-        bottom: 15px;
-        right: 15px;
-        padding: 10px;
+        bottom: 15px; /* Adjust button position */
+        right: 15px; /* Adjust button position */
+        padding: 10px; /* Adjust padding */
     }
 }

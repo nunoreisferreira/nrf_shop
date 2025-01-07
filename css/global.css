@@ -1,233 +1,241 @@
+/*
+============================================================
+GLOBAL.CSS - Global Styles for the Website
+------------------------------------------------------------
+Summary:
+- Global reset to ensure consistency across browsers.
+- Universal box sizing for predictable element dimensions.
+- Layout structure for the body, header, main, and footer sections.
+- Header and navbar styling for responsive navigation.
+- Shopping cart-specific styles with a badge for item count.
+- Footer section styling with a consistent appearance across pages.
+- Custom scrollbar styling for a polished look.
+- Responsive design to ensure usability on small and large screens.
+============================================================
+*/
+
 /* ========== Global Reset ========== */
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Ensure it spans the full height */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    box-sizing: border-box;
-    overflow-y: scroll; /* Forces the scrollbar to the right */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    height: 100%; /* Ensure it spans the full height of the viewport */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Apply a consistent font stack */
+    box-sizing: border-box; /* Include padding and border in dimensions */
+    overflow-y: scroll; /* Always show vertical scrollbar */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-
 
 /* Universal Box Sizing */
 *, *::before, *::after {
-    box-sizing: inherit;
+    box-sizing: inherit; /* Inherit box-sizing from parent */
 }
 
 /* ========== Body Layout ========== */
 body {
-    display: flex;
-    flex-direction: column; /* Stacks header, main, and footer */
-    min-height: 100vh; /* Ensures content fills the full height of the viewport */
+    display: flex; /* Use flexbox layout for the body */
+    flex-direction: column; /* Stack header, main, and footer vertically */
+    min-height: 100vh; /* Ensure body spans the full height of the viewport */
 }
 
 /* Main Content Section */
 main {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    flex: 1; /* Allow the main section to grow and fill available space */
+    width: 100%; /* Occupy full width */
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack child elements vertically */
     justify-content: flex-start; /* Align content to the top */
-    align-items: center;
-    padding: 20px;
-    overflow-y: auto; /* Enables vertical scrolling only in the main section */
+    align-items: center; /* Center content horizontally */
+    padding: 20px; /* Add padding around the main content */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* ========== Header Section ========== */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Spans the full width of the viewport */
-    padding: 20px;
-    background-color: #ffffff;
-    border-bottom: 5px solid #000000;
-    position: sticky; /* Keeps the header fixed at the top */
-    top: 0;
-    z-index: 100; /* Ensures header stays above other elements */
+    display: flex; /* Use flexbox layout for the header */
+    justify-content: space-between; /* Space out child elements */
+    align-items: center; /* Align items vertically */
+    width: 100%; /* Span full width of the viewport */
+    padding: 20px; /* Add padding inside the header */
+    background-color: #ffffff; /* Set a white background */
+    border-bottom: 5px solid #000000; /* Add a black border at the bottom */
+    position: sticky; /* Keep the header fixed at the top of the page */
+    top: 0; /* Pin header to the top of the viewport */
+    z-index: 100; /* Ensure header stays above other elements */
 }
 
 /* Logo Container */
 .logo-container {
-    display: flex;
-    align-items: center;
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Center-align items vertically */
 }
 
 .logo-container img {
-    width: 100px;
-    height: auto;
+    width: 100px; /* Set the width of the logo */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .logo-container p {
-    margin-left: 20px;
+    margin-left: 20px; /* Add space to the left of the paragraph */
 }
 
 .logo-container h1 {
-    margin-left: 15px;
-    font-style: oblique; /* Oblique styling */
-    color: #333;
-    transition: color 0.3s;
-    cursor: pointer;
+    margin-left: 15px; /* Add space to the left of the heading */
+    font-style: oblique; /* Use an oblique font style */
+    color: #333; /* Set text color to dark gray */
+    transition: color 0.3s; /* Smooth color transition on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .logo-container h1:hover {
-    color: rgb(170, 2, 2); /* Subtle color change on hover */
+    color: rgb(170, 2, 2); /* Change text color to red on hover */
 }
 
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between; /* Space between logo and nav items */
-    align-items: center; /* Vertically align items */
-    padding: 10px 20px;
-    background-color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space out logo and navigation items */
+    align-items: center; /* Align items vertically */
+    padding: 10px 20px; /* Add padding inside the navbar */
+    background-color: #fff; /* Set a white background */
+    position: sticky; /* Keep the navbar fixed at the top of the page */
+    top: 0; /* Pin navbar to the top of the viewport */
+    z-index: 100; /* Ensure navbar stays above other elements */
 }
 
 .navbar ul {
-    display: flex;
-    align-items: center; /* Vertically align navbar items */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 20px; /* Space between navbar items */
+    display: flex; /* Use flexbox layout for the navigation list */
+    align-items: center; /* Align items vertically */
+    list-style: none; /* Remove default list styles */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    gap: 20px; /* Add spacing between navigation items */
 }
 
 .navbar ul li {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1rem; /* Set font size for list items */
+    font-weight: bold; /* Make list item text bold */
 }
 
 .navbar ul li a {
-    text-decoration: none;
-    color: #000;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline from links */
+    color: #000; /* Set link text color to black */
+    padding: 8px 12px; /* Add padding inside links */
+    border-radius: 5px; /* Round the corners of the links */
+    transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
 
 .navbar ul li a:hover {
-    background-color: rgba(240, 240, 240, 0.8); /* Subtle hover effect */
+    background-color: rgba(240, 240, 240, 0.8); /* Add a subtle background hover effect */
 }
 
 /* Shopping Cart Specific Styling */
 .cart-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative; /* Position relative for badge alignment */
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center-align items */
 }
 
 .cart-item a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #f00;
-    font-size: 1rem;
-    font-weight: bold;
-    position: relative;
-}
-
-.cart-item .fas {
-    font-size: 1.2rem;
-    margin-right: 5px;
+    display: flex; /* Use flexbox layout for the link */
+    align-items: center; /* Center-align link items */
+    text-decoration: none; /* Remove underline from links */
+    color: #f00; /* Set link text color to red */
+    font-size: 1rem; /* Set font size for the link */
+    font-weight: bold; /* Make link text bold */
+    position: relative; /* Position relative for badge alignment */
 }
 
 .cart-item-count {
-    background-color: #f00;
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.8rem;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -5px;
-    right: -10px;
+    background-color: #f00; /* Set badge background color to red */
+    color: #fff; /* Set badge text color to white */
+    font-weight: bold; /* Make badge text bold */
+    font-size: 0.8rem; /* Set font size for the badge */
+    border-radius: 50%; /* Make the badge circular */
+    width: 20px; /* Set badge width */
+    height: 20px; /* Set badge height */
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Center-align badge text vertically */
+    justify-content: center; /* Center-align badge text horizontally */
+    position: absolute; /* Position badge relative to parent */
+    top: -5px; /* Position badge slightly above the parent */
+    right: -10px; /* Position badge slightly to the right of the parent */
 }
 
 /* ========== Footer Section ========== */
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #ffffff;
-    border-top: 5px solid #000000;
-    text-align: center;
-    flex-shrink: 0; /* Prevents footer from shrinking */
-    height: auto; /* Allows the footer height to adapt to content */
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center-align footer content horizontally */
+    align-items: center; /* Center-align footer content vertically */
+    padding: 15px 20px; /* Add padding inside the footer */
+    background-color: #ffffff; /* Set footer background to white */
+    border-top: 5px solid #000000; /* Add a black border at the top */
+    text-align: center; /* Center-align text inside the footer */
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+    height: auto; /* Allow footer height to adapt to content */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow at the top */
 }
 
 .footer-text {
-    font-size: 1em;
-    color: #6c757d;
+    font-size: 1em; /* Set font size for footer text */
+    color: #6c757d; /* Set text color to medium gray */
 }
 
 /* ========== Ensure Scrollbar Styling ========== */
 ::-webkit-scrollbar {
-    width: 8px; /* Adjust scrollbar width */
+    width: 8px; /* Set scrollbar width */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888; /* Scrollbar thumb color */
-    border-radius: 10px; /* Rounded scrollbar edges */
+    background: #888; /* Set scrollbar thumb color to gray */
+    border-radius: 10px; /* Round the edges of the scrollbar thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #e22323; /* Darker color on hover */
+    background: #e22323; /* Darken the scrollbar thumb on hover */
 }
 
 ::-webkit-scrollbar-track {
-    background: #bd1515; /* Scrollbar track background */
+    background: #bd1515; /* Set scrollbar track background color to red */
 }
 
 /* ========== Responsive Design ========== */
-/* Small Screens (Mobile) */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: column; /* Stack header content vertically */
+        align-items: center; /* Center-align header content */
+        text-align: center; /* Center-align text */
     }
 
     .navbar ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: column; /* Stack navbar items vertically */
+        gap: 10px; /* Reduce spacing between items */
     }
 
     .navbar a {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
     }
 
     .footer {
-        font-size: 0.8rem;
-        padding: 10px;
+        font-size: 0.8rem; /* Reduce font size for the footer */
+        padding: 10px; /* Reduce padding */
     }
 
     main {
-        padding: 10px;
+        padding: 10px; /* Reduce padding inside the main section */
     }
 }
 
-/* Large Screens (Desktop) */
 @media (min-width: 1200px) {
     .navbar ul {
-        gap: 20px;
+        gap: 20px; /* Increase spacing between navbar items */
     }
 
     .navbar a {
-        font-size: 1.1rem;
+        font-size: 1.1rem; /* Increase font size for larger screens */
     }
 
     .footer {
-        font-size: 1rem;
+        font-size: 1rem; /* Increase font size for the footer */
     }
 }

@@ -1,134 +1,148 @@
-/* Title Section */
+/*
+============================================================
+CONTACT.CSS - Styling for the Contact Page
+------------------------------------------------------------
+Summary:
+- Title section styling with a bold and prominent header.
+- Flexible layout for the main content with video, form, and map sections.
+- Form styling for user-friendly input fields and buttons.
+- Map styling with responsive design for various screen sizes.
+- Error message and focus effect styling for form validation.
+- Responsive adjustments for smaller screens to maintain usability.
+============================================================
+*/
+
+/* ========== Title Section ========== */
 .title-section {
-    text-align: center;
-    margin-bottom: 40px;
+    text-align: center; /* Center-align the title and description */
+    margin-bottom: 40px; /* Add spacing below the title section */
 }
 
 .title-section h1 {
     font-size: 3rem; /* Large and bold title */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+    font-weight: bold; /* Make the title bold */
+    color: #333; /* Set the text color to dark gray */
+    margin-bottom: 10px; /* Add spacing below the title */
 }
 
 .title-section p {
-    font-size: 1.2rem; /* Slightly smaller font for description */
-    color: #555;
-    margin-top: 10px;
+    font-size: 1.2rem; /* Slightly smaller font for the description */
+    color: #555; /* Use medium gray for the text color */
+    margin-top: 10px; /* Add spacing above the description */
 }
 
-/* Main Content Container */
+/* ========== Main Content Container ========== */
 .flex-container {
-    display: flex;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    justify-content: space-between;
-    align-items: stretch; /* Ensures all sections are equal height */
+    display: flex; /* Use flexbox for layout */
+    gap: 20px; /* Add spacing between sections */
+    max-width: 1200px; /* Limit the container width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding inside the container */
+    justify-content: space-between; /* Distribute sections evenly */
+    align-items: stretch; /* Ensure sections have equal height */
 }
 
-/* Video Section */
+/* ========== Video Section ========== */
 .video-container {
-    flex: 1; /* Ensures equal width */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 1; /* Allocate equal width for the video section */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
 .video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video scales properly */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Set video to occupy full width */
+    height: 100%; /* Set video to occupy full height */
+    object-fit: cover; /* Ensure proper scaling of video */
+    border-radius: 10px; /* Round the video corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-/* Form Section */
+/* ========== Form Section ========== */
 .form-container {
-    flex: 1; /* Ensures equal width */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allocate equal width for the form section */
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: center; /* Center-align content */
+    background-color: #f9f9f9; /* Set a light background color */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .form-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange form elements vertically */
+    gap: 15px; /* Add spacing between form elements */
 }
 
 .form-container label {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 1rem; /* Set the font size for labels */
+    font-weight: bold; /* Make the labels bold */
+    color: #333; /* Use dark gray for text color */
 }
 
 .form-container input,
 .form-container textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%; /* Set input fields to full width */
+    padding: 10px; /* Add padding inside fields */
+    font-size: 1rem; /* Set font size for inputs */
+    border: 1px solid #ccc; /* Add a light gray border */
+    border-radius: 5px; /* Round the corners of fields */
 }
 
 .form-container input:focus,
 .form-container textarea:focus {
-    border-color: rgb(170, 2, 2);
-    outline: none;
-    box-shadow: 0 0 4px rgba(170, 2, 2, 0.5);
+    border-color: rgb(170, 2, 2); /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 4px rgba(170, 2, 2, 0.5); /* Add a subtle shadow effect */
 }
 
 .form-button {
-    background-color: #f00;
-    color: #fff;
-    font-size: 1rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    background-color: #f00; /* Set a red background for the button */
+    color: #fff; /* Set the text color to white */
+    font-size: 1rem; /* Set font size for the button */
+    padding: 10px 20px; /* Add padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Round the corners of the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Add smooth transitions */
 }
 
 .form-button:hover {
-    background-color: rgb(170, 2, 2);
-    transform: scale(1.05);
+    background-color: rgb(170, 2, 2); /* Darken the red background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
-/* Map Section */
+/* ========== Map Section ========== */
 .map-container {
-    flex: 1; /* Ensures equal width */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 1; /* Allocate equal width for the map section */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
 .map-container iframe {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Set iframe to occupy full width */
+    height: 100%; /* Set iframe to occupy full height */
+    border-radius: 10px; /* Round the corners of the map */
+    border: none; /* Remove the border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-/* Error Styling */
+/* ========== Error Styling ========== */
 .error-message {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 5px;
-  }
-  
-  .error-border {
-    border-color: red;
-    outline: none;
-  }  
+    color: red; /* Set error message color to red */
+    font-size: 0.9rem; /* Set a smaller font size */
+    margin-top: 5px; /* Add spacing above error message */
+}
 
-/* Responsive Adjustments */
+.error-border {
+    border-color: red; /* Highlight border in red */
+    outline: none; /* Remove default outline */
+}
+
+/* ========== Responsive Adjustments ========== */
 @media (max-width: 768px) {
     .flex-container {
         flex-direction: column; /* Stack sections vertically */
