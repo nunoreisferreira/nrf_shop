@@ -238,4 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Go Back Button
+document.getElementById("goBackButton").addEventListener("click", function () {
+    window.history.back();
+});
 

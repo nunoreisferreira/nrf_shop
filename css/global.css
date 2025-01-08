@@ -199,9 +199,11 @@ header {
 }
 
 /* ========== Responsive Design ========== */
+
+/* Small Screens (Max Width 768px) */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack header content vertically */
+        flex-direction: column; /* Stack header content */
         align-items: center; /* Center-align header content */
         text-align: center; /* Center-align text */
     }
@@ -212,29 +214,81 @@ header {
     }
 
     .navbar a {
-        font-size: 0.9rem; /* Reduce font size for smaller screens */
+        font-size: 0.9rem; /* Adjust font size */
     }
 
     .footer {
-        font-size: 0.8rem; /* Reduce font size for the footer */
+        font-size: 0.8rem; /* Adjust footer font size */
         padding: 10px; /* Reduce padding */
     }
 
     main {
-        padding: 10px; /* Reduce padding inside the main section */
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 }
 
+/* Large Screens (Min Width 1200px) */
 @media (min-width: 1200px) {
     .navbar ul {
         gap: 20px; /* Increase spacing between navbar items */
     }
 
     .navbar a {
-        font-size: 1.1rem; /* Increase font size for larger screens */
+        font-size: 1.1rem; /* Increase font size */
     }
 
     .footer {
-        font-size: 1rem; /* Increase font size for the footer */
+        font-size: 1rem; /* Increase font size */
+    }
+}
+
+/* Portrait Orientation (Vertical Monitors) */
+@media (orientation: portrait) {
+    body {
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    header {
+        flex-direction: column; /* Stack header content vertically */
+        text-align: center; /* Center-align text in the header */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack navbar items vertically */
+        gap: 15px; /* Adjust spacing for readability */
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr; /* Ensure single-column layout for products */
+        gap: 20px; /* Add spacing between items */
+    }
+
+    .footer {
+        font-size: 0.9rem; /* Adjust footer font size for vertical displays */
+        padding: 15px; /* Adjust footer padding */
+    }
+
+    main {
+        padding: 15px; /* Adjust padding inside the main section */
+    }
+}
+
+/* Portrait + Small Screen Combo (Max Width 768px and Portrait) */
+@media (orientation: portrait) and (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr; /* Enforce single-column layout for products */
+        gap: 10px; /* Reduce spacing for smaller vertical screens */
+    }
+
+    .navbar ul {
+        gap: 10px; /* Tighter spacing for smaller screens */
+    }
+
+    .footer {
+        font-size: 0.8rem; /* Reduce footer font size further */
+    }
+
+    main {
+        padding: 10px; /* Tighten padding for smaller devices */
     }
 }

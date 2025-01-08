@@ -106,9 +106,34 @@ Summary:
     border-radius: 5px; /* Round the corners of the button */
     cursor: pointer; /* Change the cursor to a pointer on hover */
     transition: background-color 0.3s, transform 0.3s; /* Add smooth hover transitions */
+    text-decoration: none;
 }
 
 .product-item .section-button:hover {
     background-color: rgb(170, 2, 2); /* Darken the red background on hover */
     transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
+
+/* Back Button Styling */
+.back-button-container {
+    width: 100%; /* Matches grid width */
+    text-align: center;
+    margin-top: 5px; /* Space between grid and button */
+}
+
+.back-button-container .section-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #f00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-button-container .section-button:hover {
+    background-color: rgb(170, 2, 2);
+    transform: scale(1.05);
+}
+
