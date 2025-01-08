@@ -62,7 +62,7 @@ function clearErrorMessages() {
 // Add to Cart Functionality
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(productName, productPrice, productQuantity) {
+function addToCart(productName, productPrice, productQuantity, productImage) {
     const existingItem = cart.find(item => item.name === productName);
 
     if (existingItem) {
@@ -71,7 +71,8 @@ function addToCart(productName, productPrice, productQuantity) {
         cart.push({
             name: productName,
             price: parseFloat(productPrice),
-            quantity: productQuantity
+            quantity: productQuantity,
+            image: productImage || "/img/default.jpg" // Default image if none is provided
         });
     }
 
@@ -96,9 +97,10 @@ function initializeAddToCartButtons() {
             const productPrice = parseFloat(button.dataset.price);
             const quantityInput = product.querySelector('input[name="quantity"]');
             const productQuantity = quantityInput ? parseInt(quantityInput.value, 10) : 1;
+            const productImage = product.querySelector('img')?.src; // Get product image
 
             if (productQuantity > 0) {
-                addToCart(productName, productPrice, productQuantity);
+                addToCart(productName, productPrice, productQuantity, productImage);
             } else {
                 alert('Please select a valid quantity.');
             }
@@ -124,6 +126,9 @@ function renderCartItems() {
             const cartItem = document.createElement("div");
             cartItem.classList.add("cart-item");
             cartItem.innerHTML = `
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.name}" />
+                </div>
                 <div class="cart-item-details">
                     <h3>${item.name}</h3>
                     <p>Price: $${item.price.toFixed(2)}</p>

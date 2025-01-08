@@ -85,10 +85,6 @@ header {
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-.logo-container h1:hover {
-    color: rgb(170, 2, 2); /* Change text color to red on hover */
-}
-
 /* Navbar */
 .navbar {
     display: flex; /* Use flexbox layout */
@@ -124,7 +120,8 @@ header {
 }
 
 .navbar ul li a:hover {
-    background-color: rgba(240, 240, 240, 0.8); /* Add a subtle background hover effect */
+    color:  rgb(170, 2, 2);; /* Add a subtle background hover effect */
+    font-style: oblique;
 }
 
 /* Shopping Cart Specific Styling */
