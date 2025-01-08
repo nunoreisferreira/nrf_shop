@@ -95,6 +95,27 @@ Summary:
     margin: 5px 0; /* Add spacing above and below the price text */
 }
 
+.quantity-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.quantity-container label {
+    font-size: 1rem;
+    color: #333;
+}
+
+.quantity-container input {
+    width: 50px;
+    padding: 5px;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
 /* ========== Button Styling ========== */
 .product-item .section-button {
     margin-top: 10px; /* Add spacing above the button */

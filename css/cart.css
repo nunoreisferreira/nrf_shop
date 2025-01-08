@@ -157,39 +157,6 @@ body, html {
     background-color: rgb(170, 2, 2); /* Use a darker red on hover */
 }
 
-/* ========== Return to Top Button ========== */
-
-.back-to-top {
-    display: none; /* Hidden by default */
-    position: fixed;
-    bottom: 1.25rem;
-    right: 1.25rem;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    text-decoration: none;
-    transition: 0.2s ease-out;
-}
-
-.back-to-top span
-{
-    color: red;
-    font-size: 2rem;
-    transition: 0.2s ease-out;
-}
-
-.back-to-top:hover
-{
-    background-color: rgb(170, 2, 2);
-}
-
-.back-to-top:hover span
-{
-    transform: translateY(-4px);
-}
-
 /* ========== Responsive Design ========== */
 @media (max-width: 768px) {
     .cart-item {

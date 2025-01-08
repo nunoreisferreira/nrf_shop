@@ -47,16 +47,24 @@
             <img src="/img/products/chess_clock.png" alt="Digital Chess Clock" />
             <h3>Digital Chess Clock</h3>
             <p>Price: $59.99</p>
+            <div class="quantity-container">
+                <label for="quantity-digital">Qty:</label>
+                <input type="number" id="quantity-digital" name="quantity" min="1" max="10" value="1">
+            </div>
             <button class="section-button add-to-cart" data-name="Digital Chess Clock" data-price="59.99">Add to Cart</button>
           </div>
-        
+          
           <div class="product-item">
-            <img src="/img/products/analog_chess_clock.jpeg" alt="Analog Chess Clock" />
-            <h3>Analog Chess Clock</h3>
-            <p>Price: $49.99</p>
-            <button class="section-button add-to-cart" data-name="Analog Chess Clock" data-price="49.99">Add to Cart</button>
+              <img src="/img/products/analog_chess_clock.jpeg" alt="Analog Chess Clock" />
+              <h3>Analog Chess Clock</h3>
+              <p>Price: $49.99</p>
+              <div class="quantity-container">
+                  <label for="quantity-analog">Qty:</label>
+                  <input type="number" id="quantity-analog" name="quantity" min="1" max="10" value="1">
+              </div>
+              <button class="section-button add-to-cart" data-name="Analog Chess Clock" data-price="49.99">Add to Cart</button>
           </div>
-
+        
           <!-- Go Back Button -->
           <div class="back-button-container">
             <button id="goBackButton" class="section-button">Go Back</button>

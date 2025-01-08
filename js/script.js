@@ -1,64 +1,3 @@
-// Form Validation Function
-function validateForm() {
-    // Get form elements
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-  
-    // Initialize validation flag
-    let isValid = true;
-  
-    // Clear previous error messages
-    clearErrorMessages();
-  
-    // Validate Name
-    if (name.value.trim() === '') {
-      showError(name, 'Name is required.');
-      isValid = false;
-    }
-  
-    // Validate Email
-    if (!validateEmail(email.value.trim())) {
-      showError(email, 'Please enter a valid email.');
-      isValid = false;
-    }
-  
-    // Validate Message
-    if (message.value.trim().length < 10) {
-      showError(message, 'Message must be at least 10 characters long.');
-      isValid = false;
-    }
-  
-    // Display success message if valid
-    if (isValid) {
-      alert('Form submitted successfully!');
-    }
-  
-    return isValid;
-  }
-  
-  // Utility Functions
-  function validateEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-  }
-  
-  function showError(inputElement, message) {
-    const errorSpan = document.createElement('span');
-    errorSpan.classList.add('error-message');
-    errorSpan.textContent = message;
-    inputElement.parentNode.appendChild(errorSpan);
-    inputElement.classList.add('error-border');
-  }
-  
-  function clearErrorMessages() {
-    const errorMessages = document.querySelectorAll('.error-message');
-    errorMessages.forEach((msg) => msg.remove());
-  
-    const errorBorders = document.querySelectorAll('.error-border');
-    errorBorders.forEach((el) => el.classList.remove('error-border'));
-  }
-
 // Clock Update Function
 function updateClock() {
     const now = new Date();
@@ -71,51 +10,106 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// Form Validation Function
+function validateForm() {
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+    let isValid = true;
+
+    clearErrorMessages();
+
+    if (name.value.trim() === '') {
+        showError(name, 'Name is required.');
+        isValid = false;
+    }
+
+    if (!validateEmail(email.value.trim())) {
+        showError(email, 'Please enter a valid email.');
+        isValid = false;
+    }
+
+    if (message.value.trim().length < 10) {
+        showError(message, 'Message must be at least 10 characters long.');
+        isValid = false;
+    }
+
+    if (isValid) {
+        alert('Form submitted successfully!');
+    }
+
+    return isValid;
+}
+
+function validateEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}
+
+function showError(inputElement, message) {
+    const errorSpan = document.createElement('span');
+    errorSpan.classList.add('error-message');
+    errorSpan.textContent = message;
+    inputElement.parentNode.appendChild(errorSpan);
+    inputElement.classList.add('error-border');
+}
+
+function clearErrorMessages() {
+    document.querySelectorAll('.error-message').forEach(msg => msg.remove());
+    document.querySelectorAll('.error-border').forEach(el => el.classList.remove('error-border'));
+}
+
 // Add to Cart Functionality
-function addToCart(productName, productPrice) {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ name: productName, price: parseFloat(productPrice) });
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(productName, productPrice, productQuantity) {
+    const existingItem = cart.find(item => item.name === productName);
+
+    if (existingItem) {
+        existingItem.quantity += productQuantity;
+    } else {
+        cart.push({
+            name: productName,
+            price: parseFloat(productPrice),
+            quantity: productQuantity
+        });
+    }
+
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCount();
-    alert(`${productName} added to your cart!`);
+    alert(`${productQuantity} x ${productName} added to your cart!`);
 }
 
-// Update Cart Count
 function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
     const cartCountElement = document.querySelector(".cart-item-count");
     if (cartCountElement) {
-        cartCountElement.textContent = cart.length;
+        cartCountElement.textContent = cartItemCount;
     }
 }
 
-// Add Event Listeners to "Add to Cart" Buttons
-document.addEventListener("DOMContentLoaded", () => {
-    updateCartCount();
-
-    const addToCartButtons = document.querySelectorAll(".add-to-cart");
-    addToCartButtons.forEach((button) => {
-        button.addEventListener("click", () => {
+function initializeAddToCartButtons() {
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const product = button.closest('.product-item');
             const productName = button.dataset.name;
-            const productPrice = button.dataset.price;
-            addToCart(productName, productPrice);
+            const productPrice = parseFloat(button.dataset.price);
+            const quantityInput = product.querySelector('input[name="quantity"]');
+            const productQuantity = quantityInput ? parseInt(quantityInput.value, 10) : 1;
+
+            if (productQuantity > 0) {
+                addToCart(productName, productPrice, productQuantity);
+            } else {
+                alert('Please select a valid quantity.');
+            }
         });
     });
-
-    // Render cart items if on the cart page
-    if (document.getElementById("cart-items")) {
-        renderCartItems();
-    }
-
-    // Initialize "Back to Top" button functionality
-    scrollToTop();
-});
+}
 
 // Render Cart Items on Cart Page
 function renderCartItems() {
     const cartItemsContainer = document.getElementById("cart-items");
     const cartSummary = document.getElementById("cart-summary");
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     if (cartItemsContainer) {
         cartItemsContainer.innerHTML = "";
@@ -133,6 +127,7 @@ function renderCartItems() {
                 <div class="cart-item-details">
                     <h3>${item.name}</h3>
                     <p>Price: $${item.price.toFixed(2)}</p>
+                    <p>Quantity: ${item.quantity}</p>
                 </div>
                 <div class="cart-item-actions">
                     <button class="remove-item" data-index="${index}">Remove</button>
@@ -141,105 +136,46 @@ function renderCartItems() {
             cartItemsContainer.appendChild(cartItem);
         });
 
-        const totalItems = cart.length;
-        const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+        const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
         if (cartSummary) {
-            document.getElementById("total-items").textContent = `Total Items: ${totalItems}`;
+            document.getElementById("total-items").textContent = `Total Items: ${cart.length}`;
             document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`;
             cartSummary.style.display = "block";
         }
 
-        document.querySelectorAll(".remove-item").forEach((button) => {
+        document.querySelectorAll(".remove-item").forEach(button => {
             button.addEventListener("click", () => {
-                const index = button.dataset.index;
-                removeFromCart(index);
+                removeFromCart(button.dataset.index);
             });
         });
     }
 }
 
-// Remove Item from Cart
 function removeFromCart(index) {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCartItems();
     updateCartCount();
 }
 
-// Prevent Video Pause
-document.addEventListener("DOMContentLoaded", () => {
-    const videoElement = document.getElementById("video1");
-    if (videoElement) {
-        videoElement.addEventListener("pause", function () {
-            this.play();
+// Go Back Button Functionality
+function initializeGoBackButton() {
+    const goBackButton = document.getElementById("goBackButton");
+    if (goBackButton) {
+        goBackButton.addEventListener("click", () => {
+            window.history.back();
         });
     }
-});
+}
 
-// Back to top button
+// Initialize All Event Listeners on DOM Content Loaded
 document.addEventListener("DOMContentLoaded", () => {
-    const backToTopButton = document.querySelector(".back-to-top");
-    const footer = document.querySelector("footer");
-    const cartTitle = document.querySelector("h2#cart-title"); // Adjust to match your specific ID or class
+    updateCartCount();
+    initializeAddToCartButtons();
 
-    let footerVisible = false;
-    let timeoutId = null;
+    if (document.getElementById("cart-items")) {
+        renderCartItems();
+    }
 
-    // Function to toggle button visibility
-    const toggleBackToTopButton = (visible) => {
-        backToTopButton.style.display = visible ? "flex" : "none";
-    };
-
-    // IntersectionObserver to detect footer visibility
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-                footerVisible = true;
-                // Wait 1 second before activating the button
-                timeoutId = setTimeout(() => {
-                    toggleBackToTopButton(true);
-                }, 1000);
-            } else {
-                footerVisible = false;
-                clearTimeout(timeoutId); // Cancel timeout if footer is no longer visible
-                toggleBackToTopButton(false);
-            }
-        },
-        { threshold: 0.1 } // Adjust threshold for footer detection sensitivity
-    );
-
-    observer.observe(footer);
-
-    // Hide the button when at the top of the page
-    window.addEventListener("scroll", () => {
-        if (window.scrollY <= 100 && !footerVisible) {
-            toggleBackToTopButton(false);
-        }
-    });
-
-    
-    // Scroll to the cart title with added pixel adjustment
-    backToTopButton.addEventListener("click", () => {
-        if (cartTitle) {
-            cartTitle.scrollIntoView({
-                behavior: "smooth", // Smooth scrolling effect
-                block: "start", // Scroll to the top of the title
-            });
-
-            // Add pixel adjustment after scrollIntoView
-            setTimeout(() => {
-                const offset = 50; // Adjust this value as needed
-                window.scrollBy(0, -offset);
-            }, 0); // Delay to allow scrollIntoView to finish
-        } else {
-            console.warn("Cart title element not found. Check your selector or HTML structure.");
-        }
-    });
+    initializeGoBackButton();
 });
-
-// Go Back Button
-document.getElementById("goBackButton").addEventListener("click", function () {
-    window.history.back();
-});
-
