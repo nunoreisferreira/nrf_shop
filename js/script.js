@@ -176,3 +176,66 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Back to top button
+document.addEventListener("DOMContentLoaded", () => {
+    const backToTopButton = document.querySelector(".back-to-top");
+    const footer = document.querySelector("footer");
+    const cartTitle = document.querySelector("h2#cart-title"); // Adjust to match your specific ID or class
+
+    let footerVisible = false;
+    let timeoutId = null;
+
+    // Function to toggle button visibility
+    const toggleBackToTopButton = (visible) => {
+        backToTopButton.style.display = visible ? "flex" : "none";
+    };
+
+    // IntersectionObserver to detect footer visibility
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                footerVisible = true;
+                // Wait 1 second before activating the button
+                timeoutId = setTimeout(() => {
+                    toggleBackToTopButton(true);
+                }, 1000);
+            } else {
+                footerVisible = false;
+                clearTimeout(timeoutId); // Cancel timeout if footer is no longer visible
+                toggleBackToTopButton(false);
+            }
+        },
+        { threshold: 0.1 } // Adjust threshold for footer detection sensitivity
+    );
+
+    observer.observe(footer);
+
+    // Hide the button when at the top of the page
+    window.addEventListener("scroll", () => {
+        if (window.scrollY <= 100 && !footerVisible) {
+            toggleBackToTopButton(false);
+        }
+    });
+
+    
+    // Scroll to the cart title with added pixel adjustment
+    backToTopButton.addEventListener("click", () => {
+        if (cartTitle) {
+            cartTitle.scrollIntoView({
+                behavior: "smooth", // Smooth scrolling effect
+                block: "start", // Scroll to the top of the title
+            });
+
+            // Add pixel adjustment after scrollIntoView
+            setTimeout(() => {
+                const offset = 50; // Adjust this value as needed
+                window.scrollBy(0, -offset);
+            }, 0); // Delay to allow scrollIntoView to finish
+        } else {
+            console.warn("Cart title element not found. Check your selector or HTML structure.");
+        }
+    });
+});
+
+

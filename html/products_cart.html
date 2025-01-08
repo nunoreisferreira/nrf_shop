@@ -9,6 +9,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <title>NRF SHOP - Cart</title>
   </head>
   <body>
@@ -32,10 +34,15 @@
           </ul>
         </nav>         
       </header>
+      
+      <div class="cart-container">
+        <h2 id="cart-title">Your Shopping Cart</h2>
+      </div>
+
 
       <!-- Main Cart Section -->
       <main class="cart-container">
-        <h2>Your Shopping Cart</h2>
+        
         <!-- Cart Items -->
         <div id="cart-items" class="cart-items">
           <!-- Cart items will be dynamically inserted here -->
@@ -51,27 +58,16 @@
       </main>
     </div>
 
+    <a href="#" class="back-to-top">
+      <span class="material-icons">
+        arrow_upward
+      </span>
+    </a>
+
     <!-- Footer Section -->
     <footer class="footer">
       <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
     </footer>
-  
-    <button id="backToTop" onclick="scrollToTop()">Back to Top</button>
-  
-    <script>
-      // Check scroll position on the page
-      function checkScroll() {
-        const button = document.getElementById("backToTop");
-  
-        // Show or hide the button based on scroll position
-        button.style.display = window.scrollY > 2 ? "block" : "none";
-      }
-  
-      // Scroll back to the top of the page
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    </script>
 
     <script src="/js/script.js"></script>
   </body>
