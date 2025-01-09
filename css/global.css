@@ -82,7 +82,6 @@ header {
     margin-left: -5px; /* Add space to the left of the heading */
     color: #333; /* Set text color to dark gray */
     transition: color 0.3s; /* Smooth color transition on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Navbar */
@@ -106,22 +105,18 @@ header {
     gap: 20px; /* Add spacing between navigation items */
 }
 
-.navbar ul li {
-    font-size: 1rem; /* Set font size for list items */
-    font-weight: bold; /* Make list item text bold */
-}
-
 .navbar ul li a {
     text-decoration: none; /* Remove underline from links */
     color: #000; /* Set link text color to black */
+    font-weight: bold;
     padding: 8px 12px; /* Add padding inside links */
     border-radius: 5px; /* Round the corners of the links */
     transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
 
 .navbar ul li a:hover {
-    color:  rgb(170, 2, 2);; /* Add a subtle background hover effect */
-    font-style: oblique;
+    color: rgb(170, 2, 2); /* Change text color on hover */
+    font-style: oblique; /* Apply an oblique style on hover */
 }
 
 /* Shopping Cart Specific Styling */
@@ -133,9 +128,6 @@ header {
 }
 
 .cart-item a {
-    display: flex; /* Use flexbox layout for the link */
-    align-items: center; /* Center-align link items */
-    text-decoration: none; /* Remove underline from links */
     color: #f00; /* Set link text color to red */
     font-size: 1rem; /* Set font size for the link */
     font-weight: bold; /* Make link text bold */
@@ -146,13 +138,9 @@ header {
     background-color: #f00; /* Set badge background color to red */
     color: #fff; /* Set badge text color to white */
     font-weight: bold; /* Make badge text bold */
-    font-size: 0.8rem; /* Set font size for the badge */
     border-radius: 50%; /* Make the badge circular */
     width: 20px; /* Set badge width */
     height: 20px; /* Set badge height */
-    display: flex; /* Use flexbox layout */
-    align-items: center; /* Center-align badge text vertically */
-    justify-content: center; /* Center-align badge text horizontally */
     position: absolute; /* Position badge relative to parent */
     top: -5px; /* Position badge slightly above the parent */
     right: -10px; /* Position badge slightly to the right of the parent */
@@ -168,22 +156,15 @@ header {
     border-top: 5px solid #000000; /* Add a black border at the top */
     text-align: center; /* Center-align text inside the footer */
     flex-shrink: 0; /* Prevent the footer from shrinking */
-    height: auto; /* Allow footer height to adapt to content */
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow at the top */
 }
 
-.footer-text {
-    font-size: 1em; /* Set font size for footer text */
-    color: #6c757d; /* Set text color to medium gray */
-}
-
-/* ========== Ensure Scrollbar Styling ========== */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px; /* Set scrollbar width */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888; /* Set scrollbar thumb color to gray */
+    background: #888; /* Set scrollbar thumb color */
     border-radius: 10px; /* Round the edges of the scrollbar thumb */
 }
 
@@ -192,100 +173,5 @@ header {
 }
 
 ::-webkit-scrollbar-track {
-    background: #bd1515; /* Set scrollbar track background color to red */
-}
-
-/* ========== Responsive Design ========== */
-
-/* Small Screens (Max Width 768px) */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stack header content */
-        align-items: center; /* Center-align header content */
-        text-align: center; /* Center-align text */
-    }
-
-    .navbar ul {
-        flex-direction: column; /* Stack navbar items vertically */
-        gap: 10px; /* Reduce spacing between items */
-    }
-
-    .navbar a {
-        font-size: 0.9rem; /* Adjust font size */
-    }
-
-    .footer {
-        font-size: 0.8rem; /* Adjust footer font size */
-        padding: 10px; /* Reduce padding */
-    }
-
-    main {
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-}
-
-/* Large Screens (Min Width 1200px) */
-@media (min-width: 1200px) {
-    .navbar ul {
-        gap: 20px; /* Increase spacing between navbar items */
-    }
-
-    .navbar a {
-        font-size: 1.1rem; /* Increase font size */
-    }
-
-    .footer {
-        font-size: 1rem; /* Increase font size */
-    }
-}
-
-/* Portrait Orientation (Vertical Monitors) */
-@media (orientation: portrait) {
-    body {
-        padding: 10px; /* Add padding for better spacing */
-    }
-
-    header {
-        flex-direction: column; /* Stack header content vertically */
-        text-align: center; /* Center-align text in the header */
-    }
-
-    .navbar ul {
-        flex-direction: column; /* Stack navbar items vertically */
-        gap: 15px; /* Adjust spacing for readability */
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr; /* Ensure single-column layout for products */
-        gap: 20px; /* Add spacing between items */
-    }
-
-    .footer {
-        font-size: 0.9rem; /* Adjust footer font size for vertical displays */
-        padding: 15px; /* Adjust footer padding */
-    }
-
-    main {
-        padding: 15px; /* Adjust padding inside the main section */
-    }
-}
-
-/* Portrait + Small Screen Combo (Max Width 768px and Portrait) */
-@media (orientation: portrait) and (max-width: 768px) {
-    .products-grid {
-        grid-template-columns: 1fr; /* Enforce single-column layout for products */
-        gap: 10px; /* Reduce spacing for smaller vertical screens */
-    }
-
-    .navbar ul {
-        gap: 10px; /* Tighter spacing for smaller screens */
-    }
-
-    .footer {
-        font-size: 0.8rem; /* Reduce footer font size further */
-    }
-
-    main {
-        padding: 10px; /* Tighten padding for smaller devices */
-    }
+    background: #bd1515; /* Set scrollbar track background color */
 }

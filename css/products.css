@@ -13,7 +13,7 @@ Summary:
 
 /* ========== Title Section Styling ========== */
 .title-section {
-    text-align: center; /* Center the text */
+    text-align: center; /* Center-align the text */
     margin-bottom: 40px; /* Add spacing below the title section */
     padding: 0 20px; /* Add padding for alignment on small screens */
 }
@@ -23,7 +23,6 @@ Summary:
     font-weight: bold; /* Make the title bold */
     color: #333; /* Use dark gray for the title text */
     margin-bottom: 10px; /* Add spacing below the title */
-    text-align: center; /* Ensure title text is centered */
 }
 
 .title-section p {
@@ -31,10 +30,9 @@ Summary:
     color: #555; /* Use medium gray for the subtitle text */
     margin: 0 auto; /* Center the paragraph horizontally */
     max-width: 800px; /* Limit the width for readability */
-    text-align: center; /* Ensure subtitle text is centered */
 }
 
-/* ========== Products Grid Specific to Chess Sets ========== */
+/* ========== Products Grid Layout ========== */
 .products-grid {
     display: flex; /* Use flexbox layout */
     flex-wrap: wrap; /* Allow items to wrap onto the next row */
@@ -43,7 +41,7 @@ Summary:
     padding: 20px; /* Add padding around the grid */
 }
 
-/* ========== Uniform Product Item Styling ========== */
+/* ========== Product Item Styling ========== */
 .product-item {
     width: 280px; /* Set a fixed width for uniformity */
     height: 420px; /* Set a fixed height to ensure consistent size */
@@ -74,12 +72,6 @@ Summary:
     margin-bottom: 10px; /* Add spacing below the image */
 }
 
-/* ========== Zoom-In Effect on Hover ========== */
-.product-item img:hover {
-    transform: scale(1.5); /* Enlarge the image on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a more prominent shadow */
-}
-
 /* ========== Title Styling ========== */
 .product-item h3 {
     font-size: 1.3rem; /* Set a medium font size for the title */
@@ -96,24 +88,24 @@ Summary:
 }
 
 .quantity-container {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    gap: 10px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center-align elements vertically */
+    margin: 10px 0; /* Add spacing around the container */
+    gap: 10px; /* Add spacing between child elements */
 }
 
 .quantity-container label {
-    font-size: 1rem;
-    color: #333;
+    font-size: 1rem; /* Set font size for the label */
+    color: #333; /* Use dark gray for the label text */
 }
 
 .quantity-container input {
-    width: 50px;
-    padding: 5px;
-    font-size: 1rem;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    width: 50px; /* Set a fixed width for the input */
+    padding: 5px; /* Add padding inside the input */
+    font-size: 1rem; /* Set the font size for the input */
+    text-align: center; /* Center-align the text */
+    border: 1px solid #ddd; /* Add a light gray border */
+    border-radius: 5px; /* Round the corners */
 }
 
 /* ========== Button Styling ========== */
@@ -127,7 +119,7 @@ Summary:
     border-radius: 5px; /* Round the corners of the button */
     cursor: pointer; /* Change the cursor to a pointer on hover */
     transition: background-color 0.3s, transform 0.3s; /* Add smooth hover transitions */
-    text-decoration: none;
+    text-decoration: none; /* Remove underline from button links */
 }
 
 .product-item .section-button:hover {
@@ -137,24 +129,23 @@ Summary:
 
 /* Back Button Styling */
 .back-button-container {
-    width: 100%; /* Matches grid width */
-    text-align: center;
-    margin-top: 5px; /* Space between grid and button */
+    width: 100%; /* Match grid width */
+    text-align: center; /* Center-align the button */
+    margin-top: 5px; /* Add spacing above the button */
 }
 
 .back-button-container .section-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #f00;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    padding: 10px 20px; /* Add padding inside the button */
+    font-size: 1rem; /* Set the font size for the button */
+    color: #fff; /* Set the text color to white */
+    background-color: #f00; /* Set a red background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Round the corners of the button */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Add smooth hover transitions */
 }
 
 .back-button-container .section-button:hover {
-    background-color: rgb(170, 2, 2);
-    transform: scale(1.05);
+    background-color: rgb(170, 2, 2); /* Darken the red background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
-

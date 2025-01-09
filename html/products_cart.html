@@ -1,68 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+============================================================
+PRODUCTS_CART.HTML - NRF Shop Cart Page
+------------------------------------------------------------
+Summary:
+- Displays the shopping cart for the NRF Shop website.
+- Includes sections for:
+  - A header with navigation links and branding.
+  - A main content area showcasing cart items and a cart summary.
+  - A footer with copyright information.
+- Uses external CSS for styling and a JavaScript file for cart functionality.
+============================================================
+-->
+
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Sets the document's language to English -->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/cart.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <title>NRF SHOP - Cart</title>
+    <meta charset="UTF-8" /> <!-- Specifies the character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures responsive scaling -->
+    <link rel="stylesheet" href="../css/global.css" /> <!-- Links the global stylesheet -->
+    <link rel="stylesheet" href="../css/cart.css" /> <!-- Links the specific cart page stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- Adds Font Awesome icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /> <!-- Adds Google Material Icons -->
+    <title>NRF SHOP - Cart</title> <!-- Sets the title for the browser tab -->
   </head>
   <body>
-      <!-- Header Section -->
-      <header>
-        <div class="logo-container">
-          <img src="/img/home/POR 64.png" alt="NRF Logo" />
-          <h1>NRF SHOP</h1>
-          <p id="clock">00:00:00</p>
-        </div>
-        <nav class="navbar">
-          <ul>
-              <li><a href="/html/index.html">Home</a></li>
-              <li><a href="/html/about.html">About</a></li>
-              <li><a href="/html/products.html">Products</a></li>
-              <li><a href="/html/contact.html">Contact</a></li>
-              <li class="cart-item">
-                  <i class="fas fa-shopping-cart"></i>
-                  <span class="cart-item-count">2</span> <!-- Number of products -->
-              </li>
-          </ul>
-        </nav>         
-      </header>
-      
-      <div class="cart-container">
-        <h2 id="cart-title">Your Shopping Cart</h2>
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container"> <!-- Container for the logo and branding -->
+        <img src="../img/home/POR 64.png" alt="NRF Logo" /> <!-- Displays the NRF logo -->
+        <h1>NRF SHOP</h1> <!-- Displays the shop name -->
+        <p id="clock">00:00:00</p> <!-- Placeholder for a real-time clock -->
       </div>
-
-
-      <!-- Main Cart Section -->
-      <main class="cart-container">
-        
-        <!-- Cart Items -->
-        <div id="cart-items" class="cart-items">
-          <!-- Cart items will be dynamically inserted here -->
-        </div>
-
-        <!-- Cart Summary -->
-        <div id="cart-summary" class="cart-summary">
-          <h3>Cart Summary</h3>
-          <p id="total-items">Total Items: 0</p>
-          <p id="total-price">Total Price: $0.00</p>
-          <button id="checkout-button">Proceed to Checkout</button>
-        </div>
-      </main>
+      <nav class="navbar"> <!-- Navigation bar with links -->
+        <ul>
+          <li><a href="../html/index.html">Home</a></li> <!-- Link to the Home page -->
+          <li><a href="../html/about.html">About</a></li> <!-- Link to the About page -->
+          <li><a href="../html/products.html">Products</a></li> <!-- Link to the Products page -->
+          <li><a href="../html/contact.html">Contact</a></li> <!-- Link to the Contact page -->
+          <li class="cart-item"> <!-- Cart section with item count -->
+            <i class="fas fa-shopping-cart"></i> <!-- Cart icon -->
+            <span class="cart-item-count">2</span> <!-- Placeholder for the number of products -->
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- Cart Container -->
+    <div class="cart-container">
+      <h2 id="cart-title">Your Shopping Cart</h2> <!-- Cart page title -->
     </div>
 
+    <!-- Main Cart Section -->
+    <main class="cart-container">
+      <!-- Cart Items -->
+      <div id="cart-items" class="cart-items"> <!-- Dynamic container for cart items -->
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+
+      <!-- Cart Summary -->
+      <div id="cart-summary" class="cart-summary"> <!-- Container for the cart summary -->
+        <h3>Cart Summary</h3> <!-- Cart summary title -->
+        <p id="total-items">Total Items: 0</p> <!-- Placeholder for total items -->
+        <p id="total-price">Total Price: $0.00</p> <!-- Placeholder for total price -->
+        <button id="checkout-button">Proceed to Checkout</button> <!-- Checkout button -->
+      </div>
+    </main>
+
     <!-- Footer Section -->
-    <footer class="footer">
+    <footer class="footer"> <!-- Footer with copyright info -->
       <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
     </footer>
 
-    <script src="/js/script.js"></script>
+    <!-- Script Section -->
+    <script src="../js/script.js"></script> <!-- JavaScript file inclusion -->
   </body>
 </html>

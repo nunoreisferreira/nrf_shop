@@ -1,42 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+============================================================
+CONTACT.HTML - NRF Shop Contact Page
+------------------------------------------------------------
+Summary:
+- Provides a contact form for users to reach out to the company.
+- Includes sections for:
+  - A header with navigation links and branding.
+  - A main content area with a video, contact form, and map integration.
+  - A footer with copyright information.
+- Uses external CSS for styling and a JavaScript file for form validation.
+============================================================
+-->
+
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Sets the document's language to English -->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/contact.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link
-      rel="website icon"
-      type="image/png"
-      href="/img/home/transparent_website icon.png"
-    />
-    <title>NRF SHOP - Contact</title>
+    <meta charset="UTF-8" /> <!-- Specifies the character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures responsive scaling -->
+    <link rel="stylesheet" href="../css/global.css" /> <!-- Links the global stylesheet -->
+    <link rel="stylesheet" href="../css/contact.css" /> <!-- Links the specific Contact page stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- Adds Font Awesome icons -->
+    <link rel="website icon" type="image/png" href="../img/home/transparent_website_icon.png" /> <!-- Sets the website icon -->
+    <title>NRF SHOP - Contact</title> <!-- Sets the title for the browser tab -->
   </head>
   <body>
     <!-- Header Section -->
     <header>
-      <div class="logo-container">
-        <img src="/img/home/POR 64.png" alt="NRF Logo" />
-        <h1>NRF SHOP</h1>
-        <p id="clock">00:00:00</p>
+      <div class="logo-container"> <!-- Container for the logo and branding -->
+        <img src="../img/home/POR 64.png" alt="NRF Logo" /> <!-- Displays the NRF logo -->
+        <h1>NRF SHOP</h1> <!-- Displays the shop name -->
+        <p id="clock">00:00:00</p> <!-- Placeholder for a real-time clock -->
       </div>
-      <nav class="navbar">
+      <nav class="navbar"> <!-- Navigation bar with links -->
         <ul>
-          <li><a href="/html/index.html">Home</a></li>
-          <li><a href="/html/about.html">About</a></li>
-          <li><a href="/html/products.html">Products</a></li>
-          <li><a href="/html/contact.html">Contact</a></li>
-          <li class="cart-item">
-            <a href="/html/products_cart.html">
-              <i class="fas fa-shopping-cart"></i>
-              <span class="cart-item-count">0</span>
+          <li><a href="../html/index.html">Home</a></li> <!-- Link to the Home page -->
+          <li><a href="../html/about.html">About</a></li> <!-- Link to the About page -->
+          <li><a href="../html/products.html">Products</a></li> <!-- Link to the Products page -->
+          <li><a href="../html/contact.html">Contact</a></li> <!-- Link to the Contact page -->
+          <li class="cart-item"> <!-- Cart section with item count -->
+            <a href="../html/products_cart.html">
+              <i class="fas fa-shopping-cart"></i> <!-- Cart icon -->
+              <span class="cart-item-count">0</span> <!-- Placeholder for item count -->
             </a>
           </li>
-        </ul>
         </ul>
       </nav>
     </header>
@@ -44,44 +50,44 @@
     <!-- Main Content Section -->
     <main>
       <!-- Title Section -->
-      <div class="title-section">
-        <h1>Contact Us</h1>
-        <p>We’d love to hear from you! Reach out via email or the form below.</p>
+      <div class="title-section"> <!-- Section for the page title and description -->
+        <h1>Contact Us</h1> <!-- Page title -->
+        <p>We’d love to hear from you! Reach out via email or the form below.</p> <!-- Description -->
       </div>
 
-      <div class="flex-container">
+      <div class="flex-container"> <!-- Container for the video, form, and map -->
         <!-- Video Section -->
-        <div class="video-container">
+        <div class="video-container"> <!-- Container for the video -->
           <video
-            src="/video/home/video_frame_1.mp4"
+            src="../video/home/video_frame_1.mp4"
             controls
             autoplay
             muted
             loop
-          ></video>
+          ></video> <!-- Displays a video related to NRF Shop -->
         </div>
 
         <!-- Contact Form Section -->
-        <div class="form-container">
-          <form onsubmit="return validateForm()">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" />
+        <div class="form-container"> <!-- Container for the contact form -->
+          <form onsubmit="return validateForm()"> <!-- Form with JavaScript validation -->
+            <label for="name">Name:</label> <!-- Label for the name field -->
+            <input type="text" id="name" name="name" placeholder="Your Name" /> <!-- Name input field -->
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" />
+            <label for="email">E-mail:</label> <!-- Label for the email field -->
+            <input type="email" id="email" name="email" placeholder="Your Email" /> <!-- Email input field -->
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" placeholder="Your Message"></textarea>
+            <label for="message">Message:</label> <!-- Label for the message field -->
+            <textarea id="message" name="message" rows="4" placeholder="Your Message"></textarea> <!-- Message text area -->
 
             <!-- Error Message Container -->
-            <div id="error-messages" style="color: red; display: none; margin-top: 10px;"></div>
+            <div id="error-messages" style="color: red; display: none; margin-top: 10px;"></div> <!-- Placeholder for form error messages -->
 
-            <button class="form-button" type="submit">Send</button>
+            <button class="form-button" type="submit">Send</button> <!-- Submit button -->
           </form>
         </div>
 
         <!-- Map Section -->
-        <div class="map-container">
+        <div class="map-container"> <!-- Container for the embedded map -->
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.7920832090776!2d-9.16259138858168!3d38.768472554183354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1932edd62bb521%3A0x1ee0de4e32108704!2sISTEC%20-%20Instituto%20Superior%20de%20Tecnologias%20Avan%C3%A7adas!5e0!3m2!1spt-PT!2spt!4v1734116336688!5m2!1spt-PT!2spt"
             width="100%"
@@ -89,17 +95,17 @@
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          ></iframe> <!-- Embedded Google Map -->
         </div>
       </div>
     </main>
 
     <!-- Footer Section -->
-    <footer class="footer">
+    <footer class="footer"> <!-- Footer with copyright info -->
       <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
     </footer>
 
     <!-- Script Section -->
-    <script src="/js/script.js"></script>
+    <script src="../js/script.js"></script> <!-- JavaScript file inclusion -->
   </body>
 </html>

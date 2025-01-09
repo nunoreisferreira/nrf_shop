@@ -1,74 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+============================================================
+ABOUT.HTML - NRF Shop About Page
+------------------------------------------------------------
+Summary:
+- Provides an overview of the company's mission, values, and vision.
+- Includes structured sections for:
+  - A header with navigation links and company branding.
+  - A main section featuring the company's mission, vision, and reasons to choose them.
+  - A footer with copyright information.
+- Uses external CSS for styling and a JavaScript file for dynamic behavior.
+============================================================
+-->
+
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Sets the document's language to English -->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/about .css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <title>NRF SHOP - Products</title>
+    <meta charset="UTF-8" /> <!-- Specifies the character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures responsive scaling -->
+    <link rel="stylesheet" href="../css/global.css" /> <!-- Links the global stylesheet -->
+    <link rel="stylesheet" href="../css/about.css" /> <!-- Links the specific About page stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- Adds Font Awesome icons -->
+    <title>NRF SHOP - About Us</title> <!-- Sets the title for the browser tab -->
   </head>
   <body>
     <!-- Header Section -->
     <header>
-      <div class="logo-container">
-        <img src="/img/home/POR 64.png" alt="NRF Logo" />
-        <h1>NRF SHOP</h1>
-        <p id="clock">00:00:00</p>
+      <div class="logo-container"> <!-- Container for the logo and branding -->
+        <img src="/img/home/POR 64.png" alt="NRF Logo" /> <!-- Displays the NRF logo -->
+        <h1>NRF SHOP</h1> <!-- Displays the shop name -->
+        <p id="clock">00:00:00</p> <!-- Placeholder for a real-time clock -->
       </div>
-      <nav class="navbar">
+      <nav class="navbar"> <!-- Navigation bar with links -->
         <ul>
-          <li><a href="/html/index.html">Home</a></li>
-          <li><a href="/html/about.html">About</a></li>
-          <li><a href="/html/products.html">Products</a></li>
-          <li><a href="/html/contact.html">Contact</a></li>
-          <li class="cart-item">
-            <a href="/html/products_cart.html">
-              <i class="fas fa-shopping-cart"></i>
-              <span class="cart-item-count">0</span>
+          <li><a href="../html/index.html">Home</a></li> <!-- Link to the Home page -->
+          <li><a href="../html/about.html">About</a></li> <!-- Link to the About page -->
+          <li><a href="../html/products.html">Products</a></li> <!-- Link to the Products page -->
+          <li><a href="../html/contact.html">Contact</a></li> <!-- Link to the Contact page -->
+          <li class="cart-item"> <!-- Cart section with item count -->
+            <a href="../html/products_cart.html">
+              <i class="fas fa-shopping-cart"></i> <!-- Cart icon -->
+              <span class="cart-item-count">0</span> <!-- Placeholder for item count -->
             </a>
           </li>
-        </ul>
         </ul>
       </nav>
     </header>
 
     <!-- Main About Section -->
     <main>
-      <div class="title-section">
-        <h1>About Us</h1>
-        <p>Discover our mission, values, and why we love chess!</p>
+      <div class="title-section"> <!-- Section for the page title and description -->
+        <h1>About Us</h1> <!-- Page title -->
+        <p>Discover our mission, values, and why we love chess!</p> <!-- Description -->
       </div>
-      <div class="products-grid">
-        <div class="product-item">
+      <div class="products-grid"> <!-- Grid layout for the About content -->
+        <div class="product-item"> <!-- Item for company mission -->
           <h3>Our Mission</h3>
-          <p>
-            To inspire and support players of all skill levels with premium chess products and educational materials.
-          </p>
+          <p>To inspire and support players of all skill levels with premium chess products and educational materials.</p>
         </div>
-        <div class="product-item">
+        <div class="product-item"> <!-- Item for company uniqueness -->
           <h3>Why Choose Us</h3>
-          <p>
-            Exceptional quality, unmatched craftsmanship, and a commitment to customer satisfaction.
-          </p>
+          <p>Exceptional quality, unmatched craftsmanship, and a commitment to customer satisfaction.</p>
         </div>
-        <div class="product-item">
+        <div class="product-item"> <!-- Item for company vision -->
           <h3>Our Vision</h3>
-          <p>
-            To become the global leader in chess products by promoting chess as a tool for education and strategy.
-          </p>
+          <p>To become the global leader in chess products by promoting chess as a tool for education and strategy.</p>
         </div>
       </div>
     </main>
 
     <!-- Footer Section -->
-    <footer class="footer">
+    <footer class="footer"> <!-- Footer with copyright info -->
       <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
     </footer>
-        <!-- Script Section -->
-    <script src="/js/script.js"></script>
+
+    <!-- Script Section -->
+    <script src="../js/script.js"></script> <!-- JavaScript file inclusion -->
   </body>
 </html>

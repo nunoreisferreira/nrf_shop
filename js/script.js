@@ -1,130 +1,158 @@
-// Clock Update Function
+/*
+============================================================
+SCRIPT.JS - NRF Shop JavaScript Functions
+------------------------------------------------------------
+Summary:
+- Provides core JavaScript functionalities for the NRF Shop website.
+- Features include:
+  - Real-time clock updates.
+  - Form validation for user inputs.
+  - Add-to-cart functionality and cart rendering.
+  - Dynamic event handling for buttons and form elements.
+- Structured for maintainability and scalability.
+============================================================
+*/
+
+// ========== Clock Update Function ==========
+// Updates the clock displayed on the page every second.
 function updateClock() {
-    const now = new Date();
-    const formattedTime = now.toLocaleTimeString("en-US", { hour12: false });
-    const clockElement = document.getElementById("clock");
+    const now = new Date(); // Get the current date and time
+    const formattedTime = now.toLocaleTimeString("en-US", { hour12: false }); // Format time in HH:MM:SS (24-hour format)
+    const clockElement = document.getElementById("clock"); // Select the clock element
     if (clockElement) {
-        clockElement.innerText = formattedTime;
+        clockElement.innerText = formattedTime; // Update the text content
     }
 }
-setInterval(updateClock, 1000);
-updateClock();
+setInterval(updateClock, 1000); // Update the clock every second
+updateClock(); // Initialize the clock immediately
 
-// Form Validation Function
+// ========== Form Validation Functions ==========
+/* Validates the form inputs for name, email, and message */
 function validateForm() {
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-    let isValid = true;
+    const name = document.getElementById('name'); // Name input field
+    const email = document.getElementById('email'); // Email input field
+    const message = document.getElementById('message'); // Message text area
+    let isValid = true; // Default to true
 
-    clearErrorMessages();
+    clearErrorMessages(); // Remove any existing error messages
 
+    // Validate name
     if (name.value.trim() === '') {
         showError(name, 'Name is required.');
         isValid = false;
     }
 
+    // Validate email
     if (!validateEmail(email.value.trim())) {
         showError(email, 'Please enter a valid email.');
         isValid = false;
     }
 
+    // Validate message length
     if (message.value.trim().length < 10) {
         showError(message, 'Message must be at least 10 characters long.');
         isValid = false;
     }
 
     if (isValid) {
-        alert('Form submitted successfully!');
+        alert('Form submitted successfully!'); // Success message
     }
 
-    return isValid;
+    return isValid; // Return validation result
 }
 
+// Utility function to validate email format
 function validateEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex
     return emailPattern.test(email);
 }
 
+// Display error message for a specific input
 function showError(inputElement, message) {
-    const errorSpan = document.createElement('span');
-    errorSpan.classList.add('error-message');
-    errorSpan.textContent = message;
-    inputElement.parentNode.appendChild(errorSpan);
-    inputElement.classList.add('error-border');
+    const errorSpan = document.createElement('span'); // Create error span
+    errorSpan.classList.add('error-message'); // Add class for styling
+    errorSpan.textContent = message; // Set error message
+    inputElement.parentNode.appendChild(errorSpan); // Append to parent
+    inputElement.classList.add('error-border'); // Highlight input
 }
 
+// Clear all error messages and input highlights
 function clearErrorMessages() {
-    document.querySelectorAll('.error-message').forEach(msg => msg.remove());
-    document.querySelectorAll('.error-border').forEach(el => el.classList.remove('error-border'));
+    document.querySelectorAll('.error-message').forEach(msg => msg.remove()); // Remove all error messages
+    document.querySelectorAll('.error-border').forEach(el => el.classList.remove('error-border')); // Remove error styling
 }
 
-// Add to Cart Functionality
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+// ========== Add to Cart Functionality ==========
+/* Manages cart operations, including adding and rendering items. */
+let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart from local storage or initialize as empty
 
+// Add product to cart
 function addToCart(productName, productPrice, productQuantity, productImage) {
-    const existingItem = cart.find(item => item.name === productName);
+    const existingItem = cart.find(item => item.name === productName); // Check if product exists in cart
 
     if (existingItem) {
-        existingItem.quantity += productQuantity;
+        existingItem.quantity += productQuantity; // Update quantity if exists
     } else {
         cart.push({
             name: productName,
             price: parseFloat(productPrice),
             quantity: productQuantity,
-            image: productImage || "/img/default.jpg" // Default image if none is provided
+            image: productImage || "/img/default.jpg" // Default image if none provided
         });
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCount();
-    alert(`${productQuantity} x ${productName} added to your cart!`);
+    localStorage.setItem("cart", JSON.stringify(cart)); // Save updated cart
+    updateCartCount(); // Update cart count display
+    alert(`${productQuantity} x ${productName} added to your cart!`); // Confirmation alert
 }
 
+// Update cart item count in the UI
 function updateCartCount() {
-    const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0);
-    const cartCountElement = document.querySelector(".cart-item-count");
+    const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // Calculate total quantity
+    const cartCountElement = document.querySelector(".cart-item-count"); // Select cart count element
     if (cartCountElement) {
-        cartCountElement.textContent = cartItemCount;
+        cartCountElement.textContent = cartItemCount; // Update count display
     }
 }
 
+// Initialize add-to-cart buttons with event listeners
 function initializeAddToCartButtons() {
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', () => {
-            const product = button.closest('.product-item');
-            const productName = button.dataset.name;
-            const productPrice = parseFloat(button.dataset.price);
-            const quantityInput = product.querySelector('input[name="quantity"]');
-            const productQuantity = quantityInput ? parseInt(quantityInput.value, 10) : 1;
+            const product = button.closest('.product-item'); // Get product element
+            const productName = button.dataset.name; // Get product name
+            const productPrice = parseFloat(button.dataset.price); // Get product price
+            const quantityInput = product.querySelector('input[name="quantity"]'); // Get quantity input
+            const productQuantity = quantityInput ? parseInt(quantityInput.value, 10) : 1; // Default to 1
             const productImage = product.querySelector('img')?.src; // Get product image
 
             if (productQuantity > 0) {
-                addToCart(productName, productPrice, productQuantity, productImage);
+                addToCart(productName, productPrice, productQuantity, productImage); // Add to cart
             } else {
-                alert('Please select a valid quantity.');
+                alert('Please select a valid quantity.'); // Error for invalid quantity
             }
         });
     });
 }
 
-// Render Cart Items on Cart Page
+// ========== Cart Rendering and Management ==========
+/* Displays cart items and handles cart operations */
 function renderCartItems() {
-    const cartItemsContainer = document.getElementById("cart-items");
-    const cartSummary = document.getElementById("cart-summary");
+    const cartItemsContainer = document.getElementById("cart-items"); // Select cart items container
+    const cartSummary = document.getElementById("cart-summary"); // Select cart summary section
 
     if (cartItemsContainer) {
-        cartItemsContainer.innerHTML = "";
+        cartItemsContainer.innerHTML = ""; // Clear existing content
 
         if (cart.length === 0) {
-            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
-            if (cartSummary) cartSummary.style.display = "none";
+            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>"; // Empty cart message
+            if (cartSummary) cartSummary.style.display = "none"; // Hide summary
             return;
         }
 
         cart.forEach((item, index) => {
-            const cartItem = document.createElement("div");
-            cartItem.classList.add("cart-item");
+            const cartItem = document.createElement("div"); // Create cart item container
+            cartItem.classList.add("cart-item"); // Add class for styling
             cartItem.innerHTML = `
                 <div class="cart-item-image">
                     <img src="${item.image}" alt="${item.name}" />
@@ -138,49 +166,52 @@ function renderCartItems() {
                     <button class="remove-item" data-index="${index}">Remove</button>
                 </div>
             `;
-            cartItemsContainer.appendChild(cartItem);
+            cartItemsContainer.appendChild(cartItem); // Add to container
         });
 
-        const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+        const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0); // Calculate total price
         if (cartSummary) {
-            document.getElementById("total-items").textContent = `Total Items: ${cart.length}`;
-            document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`;
-            cartSummary.style.display = "block";
+            document.getElementById("total-items").textContent = `Total Items: ${cart.length}`; // Update total items
+            document.getElementById("total-price").textContent = `Total Price: $${totalPrice.toFixed(2)}`; // Update total price
+            cartSummary.style.display = "block"; // Show summary
         }
 
         document.querySelectorAll(".remove-item").forEach(button => {
             button.addEventListener("click", () => {
-                removeFromCart(button.dataset.index);
+                removeFromCart(button.dataset.index); // Remove item on click
             });
         });
     }
 }
 
+// Remove an item from the cart
 function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCartItems();
-    updateCartCount();
+    cart.splice(index, 1); // Remove item by index
+    localStorage.setItem("cart", JSON.stringify(cart)); // Save updated cart
+    renderCartItems(); // Re-render cart items
+    updateCartCount(); // Update cart count
 }
 
-// Go Back Button Functionality
+// ========== Navigation and Go Back Button ==========
+/* Handles navigation functionality */
 function initializeGoBackButton() {
-    const goBackButton = document.getElementById("goBackButton");
+    const goBackButton = document.getElementById("goBackButton"); // Select go-back button
     if (goBackButton) {
         goBackButton.addEventListener("click", () => {
-            window.history.back();
+            window.history.back(); // Navigate back to the previous page
         });
     }
 }
 
-// Initialize All Event Listeners on DOM Content Loaded
+// ========== Initialize Event Listeners on DOM Load ==========
+/* Sets up all event listeners when the page loads */
 document.addEventListener("DOMContentLoaded", () => {
-    updateCartCount();
-    initializeAddToCartButtons();
+    updateCartCount(); // Initialize cart count
+    initializeAddToCartButtons(); // Initialize add-to-cart functionality
 
     if (document.getElementById("cart-items")) {
-        renderCartItems();
+        renderCartItems(); // Render cart items if on the cart page
     }
 
-    initializeGoBackButton();
+    initializeGoBackButton(); // Initialize the go-back button
 });

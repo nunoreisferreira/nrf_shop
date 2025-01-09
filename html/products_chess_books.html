@@ -1,92 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+============================================================
+PRODUCTS_CHESS_BOOKS.HTML - NRF Shop Chess Books Page
+------------------------------------------------------------
+Summary:
+- Displays a collection of chess books available for purchase.
+- Includes sections for:
+  - A header with navigation links and branding.
+  - A main content area showcasing chess books with their prices and quantities.
+  - A footer with copyright information.
+- Uses external CSS for styling and a JavaScript file for dynamic cart functionality.
+============================================================
+-->
+
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Sets the document's language to English -->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/products.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <title>NRF SHOP - Chess Books</title>
+    <meta charset="UTF-8" /> <!-- Specifies the character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures responsive scaling -->
+    <link rel="stylesheet" href="../css/global.css" /> <!-- Links the global stylesheet -->
+    <link rel="stylesheet" href="../css/products.css" /> <!-- Links the specific products page stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- Adds Font Awesome icons -->
+    <title>NRF SHOP - Chess Books</title> <!-- Sets the title for the browser tab -->
   </head>
   <body>
-      <!-- Header Section -->
-      <header>
-        <div class="logo-container">
-          <img src="/img/home/POR 64.png" alt="NRF Logo" />
-          <h1>NRF SHOP</h1>
-          <p id="clock">00:00:00</p>
-        </div>
-        <nav class="navbar">
-          <ul>
-            <li><a href="/html/index.html">Home</a></li>
-            <li><a href="/html/about.html">About</a></li>
-            <li><a href="/html/products.html">Products</a></li>
-            <li><a href="/html/contact.html">Contact</a></li>
-            <li class="cart-item">
-              <a href="/html/products_cart.html">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-item-count">0</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+    <!-- Header Section -->
+    <header>
+      <div class="logo-container"> <!-- Container for the logo and branding -->
+        <img src="../img/home/POR 64.png" alt="NRF Logo" /> <!-- Displays the NRF logo -->
+        <h1>NRF SHOP</h1> <!-- Displays the shop name -->
+        <p id="clock">00:00:00</p> <!-- Placeholder for a real-time clock -->
+      </div>
+      <nav class="navbar"> <!-- Navigation bar with links -->
+        <ul>
+          <li><a href="../html/index.html">Home</a></li> <!-- Link to the Home page -->
+          <li><a href="../html/about.html">About</a></li> <!-- Link to the About page -->
+          <li><a href="../html/products.html">Products</a></li> <!-- Link to the Products page -->
+          <li><a href="../html/contact.html">Contact</a></li> <!-- Link to the Contact page -->
+          <li class="cart-item"> <!-- Cart section with item count -->
+            <a href="../html/products_cart.html">
+              <i class="fas fa-shopping-cart"></i> <!-- Cart icon -->
+              <span class="cart-item-count">0</span> <!-- Placeholder for item count -->
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-      <!-- Main Content Section -->
-      <main>
-        <div class="title-section">
-          <h1>Chess Books</h1>
-          <p>Learn with the bests!</p>
-        </div>
+    <!-- Main Content Section -->
+    <main>
+      <div class="title-section"> <!-- Section for the page title and description -->
+        <h1>Chess Books</h1> <!-- Page title -->
+        <p>Learn with the bests!</p> <!-- Page description -->
+      </div>
       
-        <div class="products-grid">
-          <div class="product-item">
-            <img src="/img/products/chess_book_kasparov.jpg" alt="Kasparov" />
-            <h3>My Great Predecessors I</h3>
-            <p>Price: $29.68</p>
-            <div class="quantity-container">
-                <label for="quantity-kasparov">Qty:</label>
-                <input type="number" id="quantity-kasparov" name="quantity" min="1" max="10" value="1">
-            </div>
-            <button class="section-button add-to-cart" data-name="My Great Predecessors I" data-price="29.68">Add to Cart</button>
+      <div class="products-grid"> <!-- Grid layout for chess books -->
+        <div class="product-item"> <!-- Product item for a chess book -->
+          <img src="../img/products/chess_book_kasparov.jpg" alt="Kasparov" /> <!-- Chess book image -->
+          <h3>My Great Predecessors I</h3> <!-- Book title -->
+          <p>Price: $29.68</p> <!-- Book price -->
+          <div class="quantity-container"> <!-- Container for quantity input -->
+            <label for="quantity-kasparov">Qty:</label> <!-- Label for quantity -->
+            <input type="number" id="quantity-kasparov" name="quantity" min="1" max="10" value="1"> <!-- Quantity input -->
           </div>
+          <button class="section-button add-to-cart" data-name="My Great Predecessors I" data-price="29.68">Add to Cart</button> <!-- Add-to-cart button -->
+        </div>
         
-          <div class="product-item">
-              <img src="/img/products/chess_book_bobby.jpg" alt="Bobby" />
-              <h3>Fischer in Cuba</h3>
-              <p>Price: $24.91</p>
-              <div class="quantity-container">
-                  <label for="quantity-bobby">Qty:</label>
-                  <input type="number" id="quantity-bobby" name="quantity" min="1" max="10" value="1">
-              </div>
-              <button class="section-button add-to-cart" data-name="Fischer in Cuba" data-price="24.91">Add to Cart</button>
+        <div class="product-item"> <!-- Product item for another chess book -->
+          <img src="../img/products/chess_book_bobby.jpg" alt="Bobby" /> <!-- Chess book image -->
+          <h3>Fischer in Cuba</h3> <!-- Book title -->
+          <p>Price: $24.91</p> <!-- Book price -->
+          <div class="quantity-container"> <!-- Container for quantity input -->
+            <label for="quantity-bobby">Qty:</label> <!-- Label for quantity -->
+            <input type="number" id="quantity-bobby" name="quantity" min="1" max="10" value="1"> <!-- Quantity input -->
           </div>
-          
-          <div class="product-item">
-              <img src="/img/products/chess_book_steinitz.jpg" alt="Steinitz" />
-              <h3>The Modern Chess Instructor</h3>
-              <p>Price: $26.50</p>
-              <div class="quantity-container">
-                  <label for="quantity-steinitz">Qty:</label>
-                  <input type="number" id="quantity-steinitz" name="quantity" min="1" max="10" value="1">
-              </div>
-              <button class="section-button add-to-cart" data-name="The Modern Chess Instructor" data-price="26.50">Add to Cart</button>
-          </div>
+          <button class="section-button add-to-cart" data-name="Fischer in Cuba" data-price="24.91">Add to Cart</button> <!-- Add-to-cart button -->
+        </div>
         
-          <!-- Go Back Button -->
-          <div class="back-button-container">
-            <button id="goBackButton" class="section-button">Go Back</button>
+        <div class="product-item"> <!-- Product item for another chess book -->
+          <img src="../img/products/chess_book_steinitz.jpg" alt="Steinitz" /> <!-- Chess book image -->
+          <h3>The Modern Chess Instructor</h3> <!-- Book title -->
+          <p>Price: $26.50</p> <!-- Book price -->
+          <div class="quantity-container"> <!-- Container for quantity input -->
+            <label for="quantity-steinitz">Qty:</label> <!-- Label for quantity -->
+            <input type="number" id="quantity-steinitz" name="quantity" min="1" max="10" value="1"> <!-- Quantity input -->
           </div>
-        </div>        
-      </main>
+          <button class="section-button add-to-cart" data-name="The Modern Chess Instructor" data-price="26.50">Add to Cart</button> <!-- Add-to-cart button -->
+        </div>
+        
+        <!-- Go Back Button -->
+        <div class="back-button-container"> <!-- Container for the back button -->
+          <button id="goBackButton" class="section-button">Go Back</button> <!-- Go back button -->
+        </div>
+      </div>        
+    </main>
 
-      <footer class="footer">
-        <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
-      </footer>
+    <!-- Footer Section -->
+    <footer class="footer"> <!-- Footer with copyright info -->
+      <p class="footer-text">&copy; 2024 NRF SHOP. All rights reserved.</p>
+    </footer>
 
-      <script src="/js/script.js"></script>
+    <!-- Script Section -->
+    <script src="../js/script.js"></script> <!-- JavaScript file inclusion -->
   </body>
 </html>

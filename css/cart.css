@@ -7,17 +7,16 @@ Summary:
 - Cart container with flexible layout and centralized alignment.
 - Title and cart items styling, including details, actions, and images.
 - Cart summary section with a clear layout for totals and checkout.
-- "Back to Top" button with smooth transitions and hover effects.
 - Responsive design to ensure a user-friendly interface on smaller screens.
 ============================================================
 */
 
 /* ========== General Styling ========== */
 body, html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
     overflow-y: scroll; /* Enable global vertical scrolling */
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
 }
 
 /* ========== Cart Container ========== */
@@ -34,7 +33,7 @@ body, html {
     box-sizing: border-box; /* Include padding and borders in width/height */
 }
 
-/* Title Styling */
+/* ========== Title Styling ========== */
 .cart-container h1 {
     font-size: 2rem; /* Set a large font size for the title */
     color: #333; /* Use dark gray for the text color */
@@ -72,7 +71,7 @@ body, html {
     width: 100px; /* Set a fixed width for the image */
     height: 100px; /* Set a fixed height for the image */
     border-radius: 5px; /* Round the corners of the image */
-    object-fit: cover;
+    object-fit: cover; /* Ensure proper scaling of the image */
 }
 
 .cart-item-details {
@@ -178,11 +177,5 @@ body, html {
 
     .cart-summary {
         width: 100%; /* Ensure full width on smaller screens */
-    }
-
-    #backToTop {
-        bottom: 15px; /* Adjust button position */
-        right: 15px; /* Adjust button position */
-        padding: 10px; /* Adjust padding */
     }
 }
