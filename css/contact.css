@@ -22,7 +22,7 @@ Summary:
     font-size: 3rem; /* Large and bold title */
     font-weight: bold; /* Make the title bold */
     color: #333; /* Set the text color to dark gray */
-    margin-bottom: 10px; /* Add spacing below the title */
+    margin-bottom: 5px; /* Add spacing below the title */
 }
 
 .title-section p {
@@ -37,7 +37,7 @@ Summary:
     gap: 20px; /* Add spacing between sections */
     max-width: 1200px; /* Limit the container width */
     margin: 0 auto; /* Center the container */
-    padding: 20px; /* Add padding inside the container */
+    padding: 10px; /* Add padding inside the container */
     justify-content: space-between; /* Distribute sections evenly */
     align-items: stretch; /* Ensure sections have equal height */
 }
@@ -66,7 +66,7 @@ Summary:
     flex-direction: column; /* Arrange content vertically */
     justify-content: center; /* Center-align content */
     background-color: #f9f9f9; /* Set a light background color */
-    padding: 20px; /* Add padding inside the container */
+    padding: 5px; /* Add padding inside the container */
     border-radius: 10px; /* Round the corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }

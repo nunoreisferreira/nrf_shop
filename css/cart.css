@@ -35,7 +35,8 @@ body, html {
 
 /* ========== Title Styling ========== */
 .cart-container h1 {
-    font-size: 2rem; /* Set a large font size for the title */
+    font-size: 3rem; /* Set a large font size for the title */
+    font-weight: bold; /* Make the title bold */
     color: #333; /* Use dark gray for the text color */
     margin-bottom: 20px; /* Add spacing below the title */
 }

@@ -100,7 +100,7 @@ Summary:
 }
 
 .quantity-container input {
-    width: 50px; /* Set a fixed width for the input */
+    width: 100px; /* Set a fixed width for the input */
     padding: 5px; /* Add padding inside the input */
     font-size: 1rem; /* Set the font size for the input */
     text-align: center; /* Center-align the text */

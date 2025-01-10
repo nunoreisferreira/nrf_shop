@@ -41,6 +41,7 @@ html, body {
     cursor: zoom-out;
 }
 
+
 /* ========== Body Layout ========== */
 body {
     display: flex; /* Use flexbox layout for the body */
@@ -116,8 +117,8 @@ header {
     text-decoration: none; /* Remove underline from links */
     color: #000; /* Set link text color to black */
     font-weight: bold;
-    padding: 8px 12px; /* Add padding inside links */
-    padding-right: 2rem;
+    padding: 1px 5px; /* Add padding inside links */
+    padding-right: 3rem;
     border-radius: 5px; /* Round the corners of the links */
     transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
@@ -133,10 +134,11 @@ header {
     display: flex; /* Use flexbox layout */
     align-items: center; /* Align items vertically */
     justify-content: center; /* Center-align items */
+    
 }
 
 .cart-item a {
-    color: #f00; /* Set link text color to red */
+    color: rgb(108, 139, 119); /* Set link text color to red */
     font-size: 1rem; /* Set font size for the link */
     font-weight: bold; /* Make link text bold */
     position: relative; /* Position relative for badge alignment */
@@ -147,13 +149,13 @@ header {
     color: #fff; /* Set badge text color to white */
     font-weight: bold; /* Make badge text bold */
     border-radius: 50%; /* Make the badge circular */
-    width: 2.5rem; /* Set badge width */
+    width: 3.0rem; /* Set badge width */
     height: 2.5rem; /* Set badge height */
     position: absolute; /* Position badge relative to parent */
     text-align: center;
     padding-top: 10px;
-    top: 0px; /* Position badge slightly above the parent */
-    right: -13px; /* Position badge slightly to the right of the parent */
+    top: -10px; /* Position badge slightly above the parent */
+    right: -5px; /* Position badge slightly to the right of the parent */
 }
 
 /* ========== Footer Section ========== */

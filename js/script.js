@@ -17,12 +17,22 @@ Summary:
 // Updates the clock displayed on the page every second.
 function updateClock() {
     const now = new Date(); // Get the current date and time
-    const formattedTime = now.toLocaleTimeString("en-US", { hour12: false }); // Format time in HH:MM:SS (24-hour format)
+    const localTime = now.toLocaleTimeString("en-US", { hour12: false }); // Format local time in HH:MM:SS (24-hour format)
+
+    // Get UTC name and country
+    const utcOptions = { timeZone: "UTC", timeZoneName: "short" };
+    const utcFormatter = Intl.DateTimeFormat("en-US", utcOptions);
+    const utcParts = utcFormatter.formatToParts(now);
+
+    const utcName = utcParts.find((part) => part.type === "timeZoneName").value; // Extract UTC name
+    const country = "United Kingdom"; // UTC is primarily associated with the UK
+
     const clockElement = document.getElementById("clock"); // Select the clock element
     if (clockElement) {
-        clockElement.innerText = formattedTime; // Update the text content
+        clockElement.innerText = `Local: ${localTime} | UTC: ${utcName}, ${country}`; // Update with local time, UTC name, and country
     }
 }
+
 setInterval(updateClock, 1000); // Update the clock every second
 updateClock(); // Initialize the clock immediately
 
@@ -110,10 +120,25 @@ function addToCart(productName, productPrice, productQuantity, productImage) {
 function updateCartCount() {
     const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // Calculate total quantity
     const cartCountElement = document.querySelector(".cart-item-count"); // Select cart count element
+
     if (cartCountElement) {
-        cartCountElement.textContent = cartItemCount; // Update count display
+        // Set badge text based on the count
+        if (cartItemCount > 1000000) {
+            cartCountElement.textContent = "1M+"; // More than 1 million
+        } else if (cartItemCount > 100000) {
+            cartCountElement.textContent = "100K+"; // More than 100 thousand
+        } else if (cartItemCount > 10000) {
+            cartCountElement.textContent = "10K+"; // More than 10 thousand
+        } else if (cartItemCount > 1000) {
+            cartCountElement.textContent = "1K+"; // More than 1 thousand
+        } else if (cartItemCount > 100) {
+            cartCountElement.textContent = "100+"; // More than 100
+        } else {
+            cartCountElement.textContent = cartItemCount; // Exact count for 100 or less
+        }
     }
 }
+
 
 // Initialize add-to-cart buttons with event listeners
 function initializeAddToCartButtons() {
