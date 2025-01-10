@@ -102,7 +102,7 @@ header {
     list-style: none; /* Remove default list styles */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    gap: 20px; /* Add spacing between navigation items */
+    gap: 10px; /* Add spacing between navigation items */
 }
 
 .navbar ul li a {
@@ -110,6 +110,7 @@ header {
     color: #000; /* Set link text color to black */
     font-weight: bold;
     padding: 8px 12px; /* Add padding inside links */
+    padding-right: 2rem;
     border-radius: 5px; /* Round the corners of the links */
     transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
@@ -139,11 +140,13 @@ header {
     color: #fff; /* Set badge text color to white */
     font-weight: bold; /* Make badge text bold */
     border-radius: 50%; /* Make the badge circular */
-    width: 20px; /* Set badge width */
-    height: 20px; /* Set badge height */
+    width: 2.5rem; /* Set badge width */
+    height: 2.5rem; /* Set badge height */
     position: absolute; /* Position badge relative to parent */
-    top: -5px; /* Position badge slightly above the parent */
-    right: -10px; /* Position badge slightly to the right of the parent */
+    text-align: center;
+    padding-top: 10px;
+    top: 0px; /* Position badge slightly above the parent */
+    right: -13px; /* Position badge slightly to the right of the parent */
 }
 
 /* ========== Footer Section ========== */

@@ -56,6 +56,7 @@ Summary:
     object-fit: cover; /* Ensure proper scaling of video */
     border-radius: 10px; /* Round the video corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    pointer-events: none; /* Disable interactions with the video */
 }
 
 /* ========== Form Section ========== */

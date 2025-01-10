@@ -60,10 +60,10 @@ body, html {
     align-items: center; /* Align items vertically */
     justify-content: space-between; /* Spread items across the container */
     padding: 15px; /* Add padding inside the item */
-    border: 1px solid #ddd; /* Add a light gray border */
+    border: 0.5px solid #ddd; /* Add a light gray border */
     border-radius: 10px; /* Round the corners */
     background-color: #fff; /* Set a white background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    box-shadow: 0 1px 1px rgb(219, 219, 219); /* Add a subtle shadow */
     gap: 20px; /* Add spacing between child elements */
 }
 
