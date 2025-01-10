@@ -89,6 +89,7 @@ header {
 .logo-container h1 {
     margin-left: -5px; /* Add space to the left of the heading */
     color: #333; /* Set text color to dark gray */
+    font-size: 36px;
     transition: color 0.3s; /* Smooth color transition on hover */
 }
 
@@ -117,6 +118,7 @@ header {
     text-decoration: none; /* Remove underline from links */
     color: #000; /* Set link text color to black */
     font-weight: bold;
+    font-size: 18px;
     padding: 1px 5px; /* Add padding inside links */
     padding-right: 3rem;
     border-radius: 5px; /* Round the corners of the links */
