@@ -1,12 +1,12 @@
 <!--
 ============================================================
-PRODUCTS_CHESS_SETS.HTML - NRF Shop Chess Sets Page
+PRODUCTS_CHESS_CLOCKS.HTML - NRF Shop Chess Clocks Page
 ------------------------------------------------------------
 Summary:
-- Displays a collection of chess sets available for purchase.
+- Displays a collection of chess clocks available for purchase.
 - Includes sections for:
   - A header with navigation links and branding.
-  - A main content area showcasing chess sets with their prices and quantities.
+  - A main content area showcasing chess clocks with their prices and quantities.
   - A footer with copyright information.
 - Uses external CSS for styling and a JavaScript file for dynamic cart functionality.
 ============================================================
@@ -20,7 +20,7 @@ Summary:
     <link rel="stylesheet" href="../css/global.css" /> <!-- Links the global stylesheet -->
     <link rel="stylesheet" href="../css/products.css" /> <!-- Links the specific products page stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- Adds Font Awesome icons -->
-    <title>NRF SHOP - Chess Sets</title> <!-- Sets the title for the browser tab -->
+    <title>NRF SHOP - Chess Clocks</title> <!-- Sets the title for the browser tab -->
   </head>
   <body>
     <!-- Header Section -->
@@ -49,42 +49,31 @@ Summary:
     <!-- Main Content Section -->
     <main>
       <div class="title-section"> <!-- Section for the page title and description -->
-        <h1>Chess Sets</h1> <!-- Page title -->
-        <p>Find premium chess sets made for all styles and skill levels.</p> <!-- Page description -->
+        <h1>Chess Clocks</h1> <!-- Page title -->
+        <p>Stay on time with our clocks!</p> <!-- Page description -->
       </div>
       
-      <div class="products-grid"> <!-- Grid layout for chess sets -->
-        <div class="product-item"> <!-- Product item for a chess set -->
-          <img src="../img/products/wooden_chess_set.jpg" alt="Wooden Chess Set" /> <!-- Chess set image -->
-          <h3>Wooden Chess Set</h3> <!-- Chess set title -->
-          <p>Price: $49.99</p> <!-- Chess set price -->
+      <div class="products-grid"> <!-- Grid layout for chess clocks -->
+        <div class="product-item"> <!-- Product item for a chess clock -->
+          <img src="../img/products/chess_clock.png" alt="Digital Chess Clock" /> <!-- Chess clock image -->
+          <h3>Digital Chess Clock</h3> <!-- Clock title -->
+          <p>Price: $59.99</p> <!-- Clock price -->
           <div class="quantity-container"> <!-- Container for quantity input -->
-            <label for="quantity-wooden">Qty:</label> <!-- Label for quantity -->
-            <input type="number" id="quantity-wooden" name="quantity" min="1" max="10" value="1"> <!-- Quantity input -->
+            <label for="quantity-digital">Qty:</label> <!-- Label for quantity -->
+            <input type="number" id="quantity-digital" name="quantity" min="1" max="10" value="1"> <!-- Quantity input -->
           </div>
-          <button class="section-button add-to-cart" data-name="Wooden Chess Set" data-price="49.99">Add to Cart</button> <!-- Add-to-cart button -->
+          <button class="section-button add-to-cart" data-name="Digital Chess Clock" data-price="59.99">Add to Cart</button> <!-- Add-to-cart button -->
         </div>
         
-        <div class="product-item"> <!-- Product item for another chess set -->
-          <img src="../img/products/magnetic_chess_set.jpg" alt="Magnetic Chess Set" /> <!-- Chess set image -->
-          <h3>Magnetic Chess Set</h3> <!-- Chess set title -->
-          <p>Price: $29.99</p> <!-- Chess set price -->
+        <div class="product-item"> <!-- Product item for another chess clock -->
+          <img src="../img/products/analog_chess_clock.jpeg" alt="Analog Chess Clock" /> <!-- Chess clock image -->
+          <h3>Analog Chess Clock</h3> <!-- Clock title -->
+          <p>Price: $49.99</p> <!-- Clock price -->
           <div class="quantity-container"> <!-- Container for quantity input -->
-            <label for="quantity-magnetic">Qty:</label> <!-- Label for quantity -->
-            <input type="number" id="quantity-magnetic" name="quantity" min="1" max="10" value="1"> <!-- Quantity input -->
+            <label for="quantity-analog">Qty:</label> <!-- Label for quantity -->
+            <input type="number" id="quantity-analog" name="quantity" min="1" max="10" value="1"> <!-- Quantity input -->
           </div>
-          <button class="section-button add-to-cart" data-name="Magnetic Chess Set" data-price="29.99">Add to Cart</button> <!-- Add-to-cart button -->
-        </div>
-        
-        <div class="product-item"> <!-- Product item for another chess set -->
-          <img src="../img/products/glass_chess_set.jpg" alt="Glass Chess Set" /> <!-- Chess set image -->
-          <h3>Glass Chess Set</h3> <!-- Chess set title -->
-          <p>Price: $59.99</p> <!-- Chess set price -->
-          <div class="quantity-container"> <!-- Container for quantity input -->
-            <label for="quantity-glass">Qty:</label> <!-- Label for quantity -->
-            <input type="number" id="quantity-glass" name="quantity" min="1" max="10" value="1"> <!-- Quantity input -->
-          </div>
-          <button class="section-button add-to-cart" data-name="Glass Chess Set" data-price="59.99">Add to Cart</button> <!-- Add-to-cart button -->
+          <button class="section-button add-to-cart" data-name="Analog Chess Clock" data-price="49.99">Add to Cart</button> <!-- Add-to-cart button -->
         </div>
         
         <!-- Go Back Button -->
