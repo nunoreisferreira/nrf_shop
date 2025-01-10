@@ -36,8 +36,7 @@ function updateClock() {
 setInterval(updateClock, 1000); // Update the clock every second
 updateClock(); // Initialize the clock immediately
 
-// ========== Form Validation Functions ==========
-/* Validates the form inputs for name, email, and message */
+// Form Validation
 function validateForm() {
     const name = document.getElementById('name'); // Name input field
     const email = document.getElementById('email'); // Email input field
@@ -65,10 +64,17 @@ function validateForm() {
     }
 
     if (isValid) {
-        alert('Form submitted successfully!'); // Success message
+        showNotification(); // Show success notification
     }
 
     return isValid; // Return validation result
+}
+
+// Notification Function
+function showNotification() {
+    const notification = document.getElementById("notification");
+    notification.classList.remove("hidden"); // Show the notification
+    setTimeout(() => notification.classList.add("hidden"), 3000); // Hide after 3 seconds
 }
 
 // Utility function to validate email format

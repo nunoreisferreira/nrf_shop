@@ -30,16 +30,6 @@ html, body {
     box-sizing: inherit; /* Inherit box-sizing from parent */
 }
 
-/* Add this at the bottom for zoom functionality */
-.zoomable {
-    transition: transform 0.3s ease;
-    cursor: zoom-in;
-}
-
-.zoomable:hover {
-    transform: scale(1.2);
-    cursor: zoom-out;
-}
 
 
 /* ========== Body Layout ========== */
@@ -188,4 +178,18 @@ header {
 
 ::-webkit-scrollbar-track {
     background: #bd1515; /* Set scrollbar track background color */
+}
+
+.notification {
+    padding: 10px;
+    background-color: #4caf50;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    opacity: 1;
+    transition: opacity 2s;
+}
+.hidden {
+    opacity: 0;
 }

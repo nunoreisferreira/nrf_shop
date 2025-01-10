@@ -32,6 +32,18 @@ Summary:
     max-width: 800px; /* Limit the width for readability */
 }
 
+
+/* Add this at the bottom for zoom functionality */
+.zoomable {
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.zoomable:hover {
+    transform: scale(1.5);
+    cursor: zoom-out;
+}
+
 /* ========== Products Grid Layout ========== */
 .products-grid {
     display: flex; /* Use flexbox layout */
