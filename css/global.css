@@ -30,6 +30,17 @@ html, body {
     box-sizing: inherit; /* Inherit box-sizing from parent */
 }
 
+/* Add this at the bottom for zoom functionality */
+.zoomable {
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.zoomable:hover {
+    transform: scale(1.2);
+    cursor: zoom-out;
+}
+
 /* ========== Body Layout ========== */
 body {
     display: flex; /* Use flexbox layout for the body */

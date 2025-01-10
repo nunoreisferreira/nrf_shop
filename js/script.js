@@ -215,3 +215,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeGoBackButton(); // Initialize the go-back button
 });
+
+
+//zoom
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".zoomable").forEach((img) => {
+      img.addEventListener("click", () => {
+        if (img.style.transform === "scale(1.2)") {
+          img.style.transform = "scale(1)";
+        } else {
+          img.style.transform = "scale(1.2)";
+        }
+      });
+    });
+  });
+  
