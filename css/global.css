@@ -74,10 +74,6 @@ header {
     height: auto; /* Maintain aspect ratio */
 }
 
-.logo-container p {
-    margin-left: 20px; /* Add space to the left of the paragraph */
-}
-
 .logo-container h1 {
     margin-left: -5px; /* Add space to the left of the heading */
     color: #333; /* Set text color to dark gray */

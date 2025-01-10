@@ -99,6 +99,11 @@ Summary:
     box-shadow: 0 0 4px rgba(170, 2, 2, 0.5); /* Add a subtle shadow effect */
 }
 
+.form-container p
+{
+    text-align: center;
+}
+
 .form-button {
     background-color: #f00; /* Set a red background for the button */
     color: #fff; /* Set the text color to white */
