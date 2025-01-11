@@ -36,7 +36,7 @@ function updateClock() {
 setInterval(updateClock, 1000); // Update the clock every second
 updateClock(); // Initialize the clock immediately
 
-// Form Validation
+// Form Validation and Notification
 function validateForm() {
     const name = document.getElementById('name'); // Name input field
     const email = document.getElementById('email'); // Email input field
@@ -64,17 +64,22 @@ function validateForm() {
     }
 
     if (isValid) {
-        showNotification(); // Show success notification
+        showNotification('Form submitted successfully!'); // Show success notification
+        document.querySelector('form').reset(); // Reset the form
+    } else {
+        showNotification('Please correct the errors and try again.', true); // Show error notification
     }
 
     return isValid; // Return validation result
 }
 
-// Notification Function
-function showNotification() {
-    const notification = document.getElementById("notification");
-    notification.classList.remove("hidden"); // Show the notification
-    setTimeout(() => notification.classList.add("hidden"), 3000); // Hide after 3 seconds
+// Show Notification
+function showNotification(message, isError = false) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message; // Set the message text
+    notification.style.backgroundColor = isError ? '#f44336' : '#4caf50'; // Set the background color
+    notification.classList.remove('hidden'); // Make the notification visible
+    setTimeout(() => notification.classList.add('hidden'), 3000); // Hide after 3 seconds
 }
 
 // Utility function to validate email format

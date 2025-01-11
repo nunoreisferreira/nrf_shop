@@ -30,7 +30,7 @@ main {
 
 .home-title-section h1 {
   font-size: 3rem; /* Set a large font size for the main title */
-  font-weight: bold; /* Make the title bold */
+  font-weight: lighter;
   color: #333; /* Use a dark gray color for the title */
   margin-bottom: 10px; /* Add spacing below the title */
 }
