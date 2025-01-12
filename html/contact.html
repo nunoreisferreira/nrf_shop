@@ -20,6 +20,7 @@ Summary:
     <link rel="stylesheet" href="../css/global.css" /> <!-- Links the global stylesheet -->
     <link rel="stylesheet" href="../css/contact.css" /> <!-- Links the specific Contact page stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- Adds Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
     <link rel="website icon" type="image/png" href="../img/home/transparent_website_icon.png" /> <!-- Sets the website icon -->
     <title>NRF SHOP - Contact</title> <!-- Sets the title for the browser tab -->
   </head>
@@ -67,12 +68,10 @@ Summary:
           ></video> <!-- Displays a video related to NRF Shop -->
         </div>
 
-         <!-- Notification -->
-        <div id="notification" class="notification hidden"></div>
 
         <!-- Contact Form Section -->
         <div class="form-container"> <!-- Container for the contact form -->
-          <form onsubmit="return validateForm()"> <!-- Form with JavaScript validation -->
+          <form onsubmit="validateForm(event)"> <!-- Form with JavaScript validation -->
             <label for="name">Name:</label> <!-- Label for the name field -->
             <input type="text" id="name" name="name" placeholder="Your Name" /> <!-- Name input field -->
 
@@ -86,8 +85,11 @@ Summary:
 
             <!-- Error Message Container -->
             <div id="error-messages" style="color: red; display: none; margin-top: 10px;"></div> <!-- Placeholder for form error messages -->
+            
+            <button class="form-button" onclick="showToast()">Send</button> <!-- Submit button -->
+            <div id="toastBox"></div>
 
-            <button class="form-button" type="submit">Send</button> <!-- Submit button -->
+
           </form>
         </div>
 

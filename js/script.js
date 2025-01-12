@@ -36,73 +36,78 @@ function updateClock() {
 setInterval(updateClock, 1000); // Update the clock every second
 updateClock(); // Initialize the clock immediately
 
-// Form Validation and Notification
-function validateForm() {
-    const name = document.getElementById('name'); // Name input field
-    const email = document.getElementById('email'); // Email input field
-    const message = document.getElementById('message'); // Message text area
-    let isValid = true; // Default to true
-
-    clearErrorMessages(); // Remove any existing error messages
-
+// ========== Form Validation and Notification ==========
+function validateForm(event) {
+    if (event) {
+      event.preventDefault();
+    }
+  
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+    let isValid = true;
+  
+    clearErrorMessages();
+  
     // Validate name
-    if (name.value.trim() === '') {
-        showError(name, 'Name is required.');
-        isValid = false;
+    if (!name.value.trim()) {
+      displayError(name, "Name is required.");
+      isValid = false;
     }
-
+  
     // Validate email
-    if (!validateEmail(email.value.trim())) {
-        showError(email, 'Please enter a valid email.');
-        isValid = false;
+    if (!isValidEmail(email.value.trim())) {
+      displayError(email, "Please provide a valid email address.");
+      isValid = false;
     }
-
+  
     // Validate message length
     if (message.value.trim().length < 10) {
-        showError(message, 'Message must be at least 10 characters long.');
-        isValid = false;
+      displayError(message, "Message must be at least 10 characters long.");
+      isValid = false;
     }
+  
+    // Show notification based on validation result
+    if (isValid) 
+    {
 
-    if (isValid) {
-        showNotification('Form submitted successfully!'); // Show success notification
-        document.querySelector('form').reset(); // Reset the form
-    } else {
-        showNotification('Please correct the errors and try again.', true); // Show error notification
-    }
+        let toastBox = document.getElementById('toastBox');
+        let successMsg = '<i class="fa-solid fa-check"></i> Successfully Submitted';
 
-    return isValid; // Return validation result
-}
-
-// Show Notification
-function showNotification(message, isError = false) {
-    const notification = document.getElementById('notification');
-    notification.textContent = message; // Set the message text
-    notification.style.backgroundColor = isError ? '#f44336' : '#4caf50'; // Set the background color
-    notification.classList.remove('hidden'); // Make the notification visible
-    setTimeout(() => notification.classList.add('hidden'), 3000); // Hide after 3 seconds
-}
-
-// Utility function to validate email format
-function validateEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email regex
-    return emailPattern.test(email);
-}
-
-// Display error message for a specific input
-function showError(inputElement, message) {
-    const errorSpan = document.createElement('span'); // Create error span
-    errorSpan.classList.add('error-message'); // Add class for styling
-    errorSpan.textContent = message; // Set error message
-    inputElement.parentNode.appendChild(errorSpan); // Append to parent
-    inputElement.classList.add('error-border'); // Highlight input
-}
-
-// Clear all error messages and input highlights
-function clearErrorMessages() {
-    document.querySelectorAll('.error-message').forEach(msg => msg.remove()); // Remove all error messages
-    document.querySelectorAll('.error-border').forEach(el => el.classList.remove('error-border')); // Remove error styling
-}
-
+        // Notification Function
+        function showToast()
+        {
+            let toast = document.createElement("div");
+            toast.classList.add('toast');
+            toast.innerHTML = successMsg;
+            toastBox.appendChild(toast);
+        }
+        showToast();
+    } 
+    
+  }
+  
+  // ========== Utility Functions ==========
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  
+  function displayError(field, message) {
+    const errorDiv = document.getElementById("error-messages");
+    errorDiv.style.display = "block";
+    errorDiv.innerHTML += `<p>${message}</p>`;
+    field.style.border = "2px solid red";
+  }
+  
+  function clearErrorMessages() {
+    const errorDiv = document.getElementById("error-messages");
+    errorDiv.style.display = "none";
+    errorDiv.innerHTML = "";
+    document.querySelectorAll("input, textarea").forEach(field => {
+      field.style.border = "1px solid #ccc";
+    });
+  }
 // ========== Add to Cart Functionality ==========
 /* Manages cart operations, including adding and rendering items. */
 let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve cart from local storage or initialize as empty

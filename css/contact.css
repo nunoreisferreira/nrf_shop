@@ -31,6 +31,7 @@ Summary:
     margin-top: 10px; /* Add spacing above the description */
 }
 
+
 /* ========== Main Content Container ========== */
 .flex-container {
     display: flex; /* Use flexbox for layout */
@@ -118,6 +119,37 @@ Summary:
 .form-button:hover {
     background-color: rgb(170, 2, 2); /* Darken the red background on hover */
     transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+#toastBox
+{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.toast
+{
+    width: 400px;
+    height: 80px;
+    background-color: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+}
+.toast i
+{
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+
 }
 
 /* ========== Map Section ========== */
