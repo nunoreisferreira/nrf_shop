@@ -184,7 +184,6 @@ header {
         flex-direction: column;
         align-items: center;
         padding: 10px;
-        width: 100%;
     }
 
     .navbar ul {
@@ -263,8 +262,6 @@ header {
 
 /* Chrome and Edge */
 @supports (-webkit-appearance: none) {
-
-
     /* Adjust form fields and buttons */
     input, button, select, textarea {
         outline: none;
