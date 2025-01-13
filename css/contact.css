@@ -121,35 +121,56 @@ Summary:
     transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
-#toastBox
-{
-    position: absolute;
+#toastBox {
+    position: flex; /* Use fixed to ensure it stays on screen during scrolling */
     bottom: 30px;
     right: 30px;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    overflow: hidden;
-    padding: 20px;
-}
-
-.toast
-{
-    width: 400px;
-    height: 80px;
-    background-color: #fff;
-    font-weight: 500;
-    margin: 15px 0;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    display: flex;
+    display:flexbox;
     align-items: center;
+    flex-direction: column;
+    overflow: hidden; /* Keep overflow hidden to prevent scrolling issues */
+    z-index: 1000; /* Ensure it appears above other elements */
 }
-.toast i
-{
-    margin: 0 20px;
-    font-size: 35px;
-    color: green;
 
+.toast {
+    position: relative;
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically align icon and message */
+    justify-content: center; /* Center the entire content */
+    gap: 10px; /* Add spacing between icon and text */
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1rem;
+    overflow: hidden;
+    margin-bottom: 10px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.toast i {
+    font-size: 24px;
+    color: green;
+}
+
+.toast::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Start at full width */
+    height: 5px;
+    background: green;
+    opacity: 1; /* Start fully visible */
+    transition: width 6s linear, opacity 2s; /* Smooth width and opacity transitions */
+}
+
+.toast.hide::after {
+    width: 0; /* Shrink the green bar */
+    opacity: 0; /* Gradually fade out */
 }
 
 /* ========== Map Section ========== */
@@ -189,5 +210,17 @@ Summary:
     .video-container video,
     .map-container iframe {
         height: auto; /* Adjust height for stacked layout */
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px); /* Start slightly below its final position */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

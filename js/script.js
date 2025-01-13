@@ -39,53 +39,73 @@ updateClock(); // Initialize the clock immediately
 // ========== Form Validation and Notification ==========
 function validateForm(event) {
     if (event) {
-      event.preventDefault();
+        event.preventDefault(); // Prevent default form submission
     }
-  
+
+    const form = document.querySelector('form'); // Adjust selector if necessary
     const name = document.getElementById("name");
     const email = document.getElementById("email");
     const message = document.getElementById("message");
     let isValid = true;
-  
+
     clearErrorMessages();
-  
+
     // Validate name
     if (!name.value.trim()) {
-      displayError(name, "Name is required.");
-      isValid = false;
+        displayError(name, "Name is required.");
+        isValid = false;
     }
-  
+
     // Validate email
     if (!isValidEmail(email.value.trim())) {
-      displayError(email, "Please provide a valid email address.");
-      isValid = false;
+        displayError(email, "Please provide a valid email address.");
+        isValid = false;
     }
-  
+
     // Validate message length
     if (message.value.trim().length < 10) {
-      displayError(message, "Message must be at least 10 characters long.");
-      isValid = false;
+        displayError(message, "Message must be at least 10 characters long.");
+        isValid = false;
     }
-  
+
     // Show notification based on validation result
-    if (isValid) 
-    {
-
-        let toastBox = document.getElementById('toastBox');
-        let successMsg = '<i class="fa-solid fa-check"></i> Successfully Submitted';
-
-        // Notification Function
-        function showToast()
-        {
-            let toast = document.createElement("div");
-            toast.classList.add('toast');
-            toast.innerHTML = successMsg;
-            toastBox.appendChild(toast);
-        }
+    if (isValid) {
         showToast();
-    } 
-    
-  }
+
+        // Reset the form after validation
+        if (form) {
+            form.reset();
+        }
+
+        // Reload the page after a delay
+        setTimeout(() => {
+            location.reload();
+        }, 6000); // Reload after 6 seconds
+    }
+}
+
+// Toast Notification Function
+function showToast() {
+    const toastBox = document.getElementById('toastBox');
+
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.classList.add('toast');
+    toast.innerHTML = `<i class="fa fa-check-circle"></i> <span>Successfully Submitted!</span>`;
+
+    // Append toast to the toastBox
+    toastBox.appendChild(toast);
+
+    // Add hide class after a delay
+    setTimeout(() => {
+        toast.classList.add('hide');
+    }, 4000); // Start shrinking after 4 seconds
+
+    // Remove toast after animation ends
+    setTimeout(() => {
+        toast.remove();
+    }, 6000); // Fully remove after 6 seconds
+}
   
   // ========== Utility Functions ==========
   function isValidEmail(email) {

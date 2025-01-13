@@ -164,18 +164,187 @@ header {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px; /* Set scrollbar width */
+    width: 10px; /* Set scrollbar width */
 }
 
 ::-webkit-scrollbar-thumb {
     background: #888; /* Set scrollbar thumb color */
-    border-radius: 10px; /* Round the edges of the scrollbar thumb */
+    border-radius: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #e22323; /* Darken the scrollbar thumb on hover */
+    background: rgb(170, 2, 2); /* Darken the scrollbar thumb on hover */
 }
 
-::-webkit-scrollbar-track {
-    background: #bd1515; /* Set scrollbar track background color */
+/* General Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .navbar ul li a {
+        padding-right: 0;
+        font-size: 16px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+
+    /* Main Content Adjustments */
+    main {
+        padding: 10px;
+    }
+
+    /* Products Grid */
+    .products-grid, .home-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .product-item, .home-item {
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    .product-item img, .home-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Cart Items */
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cart-item-actions {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    /* Form Adjustments (Contact Page) */
+    .form-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .form-container input, 
+    .form-container textarea {
+        font-size: 14px;
+    }
+
+    #toastBox {
+        bottom: 10px;
+        right: 10px;
+        font-size: 12px;
+    }
+}
+
+/* Browser-Specific Adjustments */
+
+/* Chrome and Edge */
+@supports (-webkit-appearance: none) {
+
+
+    /* Adjust form fields and buttons */
+    input, button, select, textarea {
+        outline: none;
+        -webkit-appearance: none; /* Remove default styling */
+        appearance: none;
+    }
+}
+
+/* Firefox */
+@-moz-document url-prefix() {
+    /* Fix flexbox gaps for Firefox */
+    .products-grid, .home-grid, .cart-item-actions {
+        gap: 10px !important;
+    }
+}
+
+/* Safari */
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    /* Ensure consistent image and button behavior */
+    img {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+
+    button {
+        -webkit-backface-visibility: hidden;
+    }
+}
+
+/* Responsive for Larger Tablets */
+@media (max-width: 1024px) {
+    /* Products and Home Items */
+    .products-grid, .home-grid {
+        gap: 15px;
+    }
+
+    .product-item img, .home-item img {
+        max-width: 80%;
+    }
+
+    /* Cart Summary */
+    .cart-summary {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Specific Adjustments for Smaller Devices */
+@media (max-width: 576px) {
+    /* Navbar */
+    .navbar ul {
+        gap: 3px;
+    }
+
+    .navbar ul li a {
+        font-size: 14px;
+    }
+
+    /* Product Items */
+    .product-item {
+        flex: 1 1 100%;
+    }
+
+    /* Cart Summary Button */
+    .cart-summary button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Form Elements */
+    .form-container label {
+        font-size: 14px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        padding: 8px;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 12px;
+    }
 }
