@@ -278,18 +278,6 @@ header {
     }
 }
 
-/* Safari */
-@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
-    /* Ensure consistent image and button behavior */
-    img {
-        -webkit-transform: translate3d(0, 0, 0);
-    }
-
-    button {
-        -webkit-backface-visibility: hidden;
-    }
-}
-
 /* Responsive for Larger Tablets */
 @media (max-width: 1024px) {
     /* Products and Home Items */
