@@ -77,7 +77,7 @@ header {
 }
 
 .logo-container h1 {
-    margin-left: -5px; /* Add space to the left of the heading */
+    margin-left: 5px; /* Add space to the left of the heading */
     color: #333; /* Set text color to dark gray */
     font-size: 36px;
     transition: color 0.3s; /* Smooth color transition on hover */
